@@ -9,48 +9,60 @@
     <input [(ngModel)]="username" type="text" placeholder="Enter Username Ex: grant@toast.ooo" class="Search-input" />
     <button (click)="onSubmit()" class="btn serach-color">Search</button>
 </div>
-
+@if (errorAlert.length > 0) {
+    <p class="error-box">{{errorAlert}}</p>
+}
 @if (showResults) {
 <main>
-    <h2>Hello, {{username}}!</h2>
-    <p>Your ranking: {{userRanking}} out of 1979 users.</p>
-    <p>The coordinate you placed the most pixels on was {{topCord}} - {{cordCount}} times.</p>
-    <p>You placed {{pixelsPlaced}} pixels throughout the event! Here is how many of each color you placed:</p>
+    <h2>Hello, {{userRanking.userName}}!</h2>
+    <p>Your ranking: {{userRanking.ranking}} out of 1979 users.</p>
+    @if (warCord.users.length > 0) {
+        <p>It looks like you were in a battle with other users. Here are all the users that had {{topCord.topCord}} as their most placed coordinate:</p>
+        <ul>
+            @for (warUsers of warCord.users; track warUsers) {
+                <li>{{warUsers}} times</li>
+            }
+        </ul>
+    }
+    @if (warCord.users.length < 1) {
+        <p>The coordinate you placed the most pixels on was {{topCord.topCord}} - {{topCord.count}} times.</p>
+    }
+    <p>You placed {{userRanking.pixelCount}} pixels throughout the event! Here is how many of each color you placed:</p>
     <div class="colors-wrapper">
-        <span class="white count">White: {{colors.white}}</span>
-        <span class="count lightGrey">Light Grey: {{colors.lightGrey}}</span>
-        <span class="count mediumGrey">Medium Grey: {{colors.mediumGrey}}</span>
-        <span class="count deepGrey">Deep Grey: {{colors.deepGrey}}</span>
-        <span class="count darkGrey">Dark Grey: {{colors.darkGrey}}</span>
-        <span class="count black">Black: {{colors.black}}</span>
-        <span class="count darkChocolate">Dark Chocolate: {{colors.darkChocolate}}</span>
-        <span class="count chocolate">Chocolate: {{colors.chocolate}}</span>
-        <span class="count brown">Brown: {{colors.brown}}</span>
-        <span class="count peach">Peach: {{colors.peach}}</span>
-        <span class="count beige">Beige: {{colors.beige}}</span>
-        <span class="count pink">Pink: {{colors.pink}}</span>
-        <span class="count magenta">Magenta: {{colors.magenta}}</span>
-        <span class="count mauve">Mauve: {{colors.mauve}}</span>
-        <span class="count purple">Purple: {{colors.purple}}</span>
-        <span class="count darkPurple">Dark Purple: {{colors.darkPurple}}</span>
-        <span class="count navy">Navy: {{colors.navy}}</span>
-        <span class="count blue">Blue: {{colors.blue}}</span>
-        <span class="count azure">Azure: {{colors.azure}}</span>
-        <span class="count aqua">Aqua: {{colors.aqua}}</span>
-        <span class="count lightTeal">Light Teal: {{colors.lightTeal}}</span>
-        <span class="count darkTeal">Dark Teal: {{colors.darkTeal}}</span>
-        <span class="count forest">Forest: {{colors.forest}}</span>
-        <span class="count darkGreen">Dark Green: {{colors.darkGreen}}</span>
-        <span class="count green">Green: {{colors.green}}</span>
-        <span class="count lime">Lime: {{colors.lime}}</span>
-        <span class="count pastelYellow">Pastel Yellow: {{colors.pastelYellow}}</span>
-        <span class="count yellow">Yellow: {{colors.yellow}}</span>
-        <span class="count orange">Orange: {{colors.orange}}</span>
-        <span class="count rust">Rust: {{colors.rust}}</span>
-        <span class="count maroon">Maroon: {{colors.maroon}}</span>
-        <span class="count rose">Rose: {{colors.rose}}</span>
-        <span class="count red">Red: {{colors.red}}</span>
-        <span class="count watermelon">Watermelon: {{colors.watermelon}}</span>
+        <span class="white count">White: {{userColorCount.colors.White}}</span>
+        <span class="count lightGrey">Light Grey: {{userColorCount.colors.LightGrey}}</span>
+        <span class="count mediumGrey">Medium Grey: {{userColorCount.colors.MediumGrey}}</span>
+        <span class="count deepGrey">Deep Grey: {{userColorCount.colors.DeepGrey}}</span>
+        <span class="count darkGrey">Dark Grey: {{userColorCount.colors.DarkGrey}}</span>
+        <span class="count black">Black: {{userColorCount.colors.Black}}</span>
+        <span class="count darkChocolate">Dark Chocolate: {{userColorCount.colors.DarkChocolate}}</span>
+        <span class="count chocolate">Chocolate: {{userColorCount.colors.Chocolate}}</span>
+        <span class="count brown">Brown: {{userColorCount.colors.Brown}}</span>
+        <span class="count peach">Peach: {{userColorCount.colors.Peach}}</span>
+        <span class="count beige">Beige: {{userColorCount.colors.Beige}}</span>
+        <span class="count pink">Pink: {{userColorCount.colors.Pink}}</span>
+        <span class="count magenta">Magenta: {{userColorCount.colors.Magenta}}</span>
+        <span class="count mauve">Mauve: {{userColorCount.colors.Mauve}}</span>
+        <span class="count purple">Purple: {{userColorCount.colors.Purple}}</span>
+        <span class="count darkPurple">Dark Purple: {{userColorCount.colors.DarkPurple}}</span>
+        <span class="count navy">Navy: {{userColorCount.colors.Navy}}</span>
+        <span class="count blue">Blue: {{userColorCount.colors.Blue}}</span>
+        <span class="count azure">Azure: {{userColorCount.colors.Azure}}</span>
+        <span class="count aqua">Aqua: {{userColorCount.colors.Aqua}}</span>
+        <span class="count lightTeal">Light Teal: {{userColorCount.colors.LightTeal}}</span>
+        <span class="count darkTeal">Dark Teal: {{userColorCount.colors.DarkTeal}}</span>
+        <span class="count forest">Forest: {{userColorCount.colors.Forest}}</span>
+        <span class="count darkGreen">Dark Green: {{userColorCount.colors.DarkGreen}}</span>
+        <span class="count green">Green: {{userColorCount.colors.Green}}</span>
+        <span class="count lime">Lime: {{userColorCount.colors.Lime}}</span>
+        <span class="count pastelYellow">Pastel Yellow: {{userColorCount.colors.PastelYellow}}</span>
+        <span class="count yellow">Yellow: {{userColorCount.colors.Yellow}}</span>
+        <span class="count orange">Orange: {{userColorCount.colors.Orange}}</span>
+        <span class="count rust">Rust: {{userColorCount.colors.Rust}}</span>
+        <span class="count maroon">Maroon: {{userColorCount.colors.Maroon}}</span>
+        <span class="count rose">Rose: {{userColorCount.colors.Rose}}</span>
+        <span class="count red">Red: {{userColorCount.colors.Red}}</span>
+        <span class="count watermelon">Watermelon: {{userColorCount.colors.Watermelon}}</span>
     </div>
     <hr />
     <p>More features coming soon... maybe</p>
