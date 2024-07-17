@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0';
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto:wght@400;900&display=swap');
+
+body {
+    background-color: #b9c3cf;
+    font-family: 'Roboto Slab';
+}
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Roboto';
+}

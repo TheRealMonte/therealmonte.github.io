@@ -1,0 +1,59 @@
+<div class="links-wrapper">
+    <a href="https://fediverse.events/">fediverse.events</a>
+    <a href="https://matrix.to/#/#lemmy-canvas:matrix.org">Matrix Space</a>
+    <a href="https://discord.gg/mEUqXZw8kR">Discord Server (bridged to matrix)</a>
+    <a href="https://toast.ooo/c/canvas">Lemmy</a>
+</div>
+
+<div class="search-wrapper">
+    <input [(ngModel)]="username" type="text" placeholder="Enter Username Ex: grant@toast.ooo" class="Search-input" />
+    <button (click)="onSubmit()" class="btn serach-color">Search</button>
+</div>
+
+@if (showResults) {
+<main>
+    <h2>Hello, {{username}}!</h2>
+    <p>Your ranking: {{userRanking}} out of 1979 users.</p>
+    <p>The coordinate you placed the most pixels on was {{topCord}} - {{cordCount}} times.</p>
+    <p>You placed {{pixelsPlaced}} pixels throughout the event! Here is how many of each color you placed:</p>
+    <div class="colors-wrapper">
+        <span class="white count">White: {{colors.white}}</span>
+        <span class="count lightGrey">Light Grey: {{colors.lightGrey}}</span>
+        <span class="count mediumGrey">Medium Grey: {{colors.mediumGrey}}</span>
+        <span class="count deepGrey">Deep Grey: {{colors.deepGrey}}</span>
+        <span class="count darkGrey">Dark Grey: {{colors.darkGrey}}</span>
+        <span class="count black">Black: {{colors.black}}</span>
+        <span class="count darkChocolate">Dark Chocolate: {{colors.darkChocolate}}</span>
+        <span class="count chocolate">Chocolate: {{colors.chocolate}}</span>
+        <span class="count brown">Brown: {{colors.brown}}</span>
+        <span class="count peach">Peach: {{colors.peach}}</span>
+        <span class="count beige">Beige: {{colors.beige}}</span>
+        <span class="count pink">Pink: {{colors.pink}}</span>
+        <span class="count magenta">Magenta: {{colors.magenta}}</span>
+        <span class="count mauve">Mauve: {{colors.mauve}}</span>
+        <span class="count purple">Purple: {{colors.purple}}</span>
+        <span class="count darkPurple">Dark Purple: {{colors.darkPurple}}</span>
+        <span class="count navy">Navy: {{colors.navy}}</span>
+        <span class="count blue">Blue: {{colors.blue}}</span>
+        <span class="count azure">Azure: {{colors.azure}}</span>
+        <span class="count aqua">Aqua: {{colors.aqua}}</span>
+        <span class="count lightTeal">Light Teal: {{colors.lightTeal}}</span>
+        <span class="count darkTeal">Dark Teal: {{colors.darkTeal}}</span>
+        <span class="count forest">Forest: {{colors.forest}}</span>
+        <span class="count darkGreen">Dark Green: {{colors.darkGreen}}</span>
+        <span class="count green">Green: {{colors.green}}</span>
+        <span class="count lime">Lime: {{colors.lime}}</span>
+        <span class="count pastelYellow">Pastel Yellow: {{colors.pastelYellow}}</span>
+        <span class="count yellow">Yellow: {{colors.yellow}}</span>
+        <span class="count orange">Orange: {{colors.orange}}</span>
+        <span class="count rust">Rust: {{colors.rust}}</span>
+        <span class="count maroon">Maroon: {{colors.maroon}}</span>
+        <span class="count rose">Rose: {{colors.rose}}</span>
+        <span class="count red">Red: {{colors.red}}</span>
+        <span class="count watermelon">Watermelon: {{colors.watermelon}}</span>
+    </div>
+    <hr />
+    <p>More features coming soon... maybe</p>
+</main>
+
+}
