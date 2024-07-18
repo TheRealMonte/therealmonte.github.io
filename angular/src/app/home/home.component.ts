@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   errorAlert: string = "";
   username: string = ""
   showResults:boolean = false;
+  showAllStats = true;
   userRanking!: Ranking;
   userColorCount!: UserColorCount;
   topCord!: TopCord;
@@ -40,7 +41,17 @@ export class HomeComponent implements OnInit {
     });
     this.canvasService.getAllWarCords().subscribe((data) => {
       this.allWarCords = data;
-    })
+    });
+    this.resetColorCountsToAll();
+  }
+
+  resetColorCountsToAll() {
+    let allColorCount = this.allUserColorCounts.find(user => {
+      return user.userName == "all";
+    });
+    if (allColorCount != undefined) {
+      this.userColorCount = allColorCount;
+    }
   }
 
   onSubmit() {
@@ -51,9 +62,12 @@ export class HomeComponent implements OnInit {
     if (result == undefined) {
       this.errorAlert = "User not found.";
       this.showResults = false;
+      this.showAllStats = true;
+      this.resetColorCountsToAll();
     } else {
       this.userRanking = result;
       this.showResults = true;
+      this.showAllStats = false;
       let colorResult = this.allUserColorCounts.find(user => {
         return user.userName == this.username;
       });

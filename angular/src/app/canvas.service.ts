@@ -15,7 +15,7 @@ export class CanvasService {
     }
 
     getAllUserColorCounts(): Observable<UserColorCount[]> {
-        return this.http.get<UserColorCount[]>('https://therealmonte.github.io/api/colorCount.json');
+        return this.http.get<UserColorCount[]>('https://therealmonte.github.io/apitoo/colorCount.json');
     }
 
     getAllTopCords(): Observable<TopCord[]> {
