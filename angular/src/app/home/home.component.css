@@ -60,6 +60,14 @@ input[type=text], select {
     box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
     border-radius: 5px;
 }
+
+.pixel-demo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    border: 1px solid black;
+}
 main {
     max-width: 900px;
     margin: 10px auto;
