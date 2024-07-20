@@ -1,8 +1,4 @@
 # 2023 Canvas Stats
-Here are the stats for each user in txt files:
-* [Click here](https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2023%20Stats/rankings.txt) to view the user rankings
-* [Click here](https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2023%20Stats/color_count.txt) to see how many pixels of each color every user placed.
-
 2277 users from 132 instances participated in the event in 2023.
 
 There were 628416 pixels placed on the canvas. Here are the counts for each color pixel placed:
@@ -38,3 +34,7 @@ There were 628416 pixels placed on the canvas. Here are the counts for each colo
 * Lime: 5585
 * Forest: 9478
 * Maroon: 4218
+
+Here are the stats for each user in txt files:
+* [Click here](https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2023%20Stats/rankings.txt) to view the user rankings
+* [Click here](https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2023%20Stats/color_count.txt) to see how many pixels of each color every user placed.
