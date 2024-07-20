@@ -39,14 +39,14 @@ There were 642338 pixels placed on the canvas. Of those pixels, 408881 are the f
 
 
 The coordinate with the most pixels placed on was (10,262) with 1427 placed. The users who placed pixels on (10,262) are:
-* 142446@toast.ooo: 1414 times
-* Kelo@lemmy.world: 6 times
-* hemko@lemmy.dbzer0.com: 2 times
-* ategon@programming.dev: 1 time
-* kelo@lemmy.world: 1 time
-* grant@grants.cafe: 1 time
-* EXtremeExploit@lemmy.world: 1 time
-* hdggDalton@toast.ooo: 1 time
+* 142446&#64;toast&#46;ooo: 1414 times
+* Kelo&#64;lemmy&#46;world: 6 times
+* hemko&#64;lemmy&#46;dbzer0.com: 2 times
+* ategon&#64;programming&#46;dev: 1 time
+* kelo&#64;lemmy&#46;world: 1 time
+* grant&#64;grants&#46;cafe: 1 time
+* EXtremeExploit&#64;lemmy&#46;world: 1 time
+* hdggDalton&#64;toast&#46;ooo: 1 time
 
 
 Here are the stats for each user in txt files:
