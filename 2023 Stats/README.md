@@ -38,3 +38,5 @@ There were 628416 pixels placed on the canvas. Here are the counts for each colo
 Here are the stats for each user in txt files:
 * [Click here](https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2023%20Stats/rankings.txt) to view the user rankings
 * [Click here](https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2023%20Stats/color_count.txt) to see how many pixels of each color every user placed.
+* [Click here](https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2023%20Stats/top_cord.txt) to view the coordinate every user placed the most pixels on.
+
