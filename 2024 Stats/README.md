@@ -1,5 +1,5 @@
 # 2024 Canvas Stats
-1972 users from 302 instances participated in the event.
+1972 users from 302 instances participated in the event in 2024.
 
 There were 642338 pixels placed on the canvas. Of those pixels, 408881 are the final pixels on the canvas, making the canvas 81.7762% covered at the end of the event. Here are the counts for each color pixel placed:
 * White: 55152
