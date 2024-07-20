@@ -1,9 +1,7 @@
 # 2024 Canvas Stats
-
 1972 users from 302 instances participated in the event.
 
 There were 642338 pixels placed on the canvas. Of those pixels, 408881 are the final pixels on the canvas, making the canvas 81.7762% covered at the end of the event. Here are the counts for each color pixel placed:
-
 * White: 55152
 * Light Grey: 20011
 * Medium Grey: 13057
@@ -49,3 +47,9 @@ The coordinate with the most pixels placed on was (10,262) with 1427 placed. The
 * grant@grants.cafe: 1 time
 * EXtremeExploit@lemmy.world: 1 time
 * hdggDalton@toast.ooo: 1 time
+
+
+Here are the stats for each user in txt files:
+* [Click here](https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2024%20Stats/ranking.txt) to view the user rankings.
+* [Click here](https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2024%20Stats/user_color_count.txt) to see how many pixels of each color every user placed.
+* [Click here](https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2024%20Stats/user_top_cord.txt) to view the coordinate every user placed the most pixels on.
