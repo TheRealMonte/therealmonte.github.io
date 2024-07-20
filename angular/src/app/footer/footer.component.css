@@ -1,0 +1,8 @@
+footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+footer span {
+    margin: 5px 10px;
+}

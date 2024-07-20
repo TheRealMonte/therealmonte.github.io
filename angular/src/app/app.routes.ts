@@ -4,5 +4,5 @@ import { DrawComponent } from './draw/draw.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
-    {path: 'draw', component: DrawComponent}
+    {path: 'draw/:id', component: DrawComponent}
 ];

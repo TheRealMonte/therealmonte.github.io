@@ -1,3 +1,12 @@
+main {
+    width: 1040px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 5px;
+}
+
 #myCanvas {
     display: block;
     width: 1000px;
@@ -5,6 +14,9 @@
     background-color: white;
     border: 1px solid black;
     margin: 5px auto;
+}
+.responsive-warning {
+    display: none;
 }
 
 .btn {
@@ -20,10 +32,36 @@
     color: white;
 }
 
+button {
+    cursor: pointer;
+}
+
+.blue {
+    background-color: #0334BF;
+}
+.green {
+    background-color: #18862F;
+}
+
 .btn:active {
     box-shadow: 0 0 #ffffff;
     transform: translateY(4px);
 }
 .material-symbols-outlined {
     vertical-align: middle;
+}
+
+p {
+    text-align: center;
+}
+@media only screen and (max-width: 1093px) {
+    main {
+        width: 95%;
+    }
+    #myCanvas {
+        width: 90%;
+    }
+    .responsive-warning {
+        display: contents;
+    }
 }

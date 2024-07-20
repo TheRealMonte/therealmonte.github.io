@@ -1,10 +1,4 @@
-<div class="links-wrapper">
-    <a href="https://fediverse.events/">fediverse.events</a>
-    <a href="https://matrix.to/#/#lemmy-canvas:matrix.org">Matrix Space</a>
-    <a href="https://discord.gg/mEUqXZw8kR">Discord Server (bridged to matrix)</a>
-    <a href="https://toast.ooo/c/canvas">Lemmy</a>
-</div>
-
+<app-navbar />
 <div class="search-wrapper">
     <input [(ngModel)]="username" type="text" placeholder="Enter Username Ex: grant@toast.ooo" class="Search-input" />
     <button (click)="onSubmit()" class="btn serach-color">Search</button>
@@ -65,10 +59,8 @@
             <li>EXtremeExploit&#64;lemmy.world: 1 time</li>
             <li>hdggDalton&#64;toast.ooo: 1 time</li>
         </ul>
-        <hr />
-        <p>If you would like an image for just the pixels you placed, such as the example shown below, send me a DM at <a href="https://sh.itjust.works/u/the_real_monte">&#64;the_real_monte&#64;sh.itjust.works</a>. I can make the background color white or black.</p>
-    <img src="https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/screenshots/user_pixel_demo.PNG" alt="An example of just one user's pixels." class="pixel-demo" />
 </main>
+<app-footer />
 }
 @if (showResults) {
 <main>
@@ -122,10 +114,9 @@
         <span class="count red">Red: {{userColorCount.colors.Red}}</span>
         <span class="count watermelon">Watermelon: {{userColorCount.colors.Watermelon}}</span>
     </div>
-    <hr />
-    <p>If you would like an image for just the pixels you placed, such as the example shown below, send me a DM at <a href="https://sh.itjust.works/u/the_real_monte">&#64;the_real_monte&#64;sh.itjust.works</a>. I can make the background color white or black.</p>
-    <hr />
-    <p>More features coming soon... maybe</p>
+    <section class="btn-wrapper">
+        <button (click)="sendUserToDraw()" class="btn darkGreen">Click here to see the pixels you placed</button>
+    </section>
 </main>
 
 }

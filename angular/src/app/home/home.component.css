@@ -77,6 +77,10 @@ main {
     border-radius: 5px;
     background-color: white;
 }
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
 
 .colors-wrapper {
     display: flex;

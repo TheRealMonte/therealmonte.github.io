@@ -1,6 +1,19 @@
-<a href="/" class="btn"><span class="material-symbols-outlined">
-    arrow_back
-    </span> Back</a>
-<canvas id="myCanvas" #pixelCanvas width="1000" height="500">Your browser does not support the HTML canvas tag.</canvas>
-<p>{{count}}</p>
+<app-navbar />
+<main>
+    <a href="/" class="btn blue"><span class="material-symbols-outlined">
+        arrow_back
+        </span> Back</a>
+        @if(!finishedDrawing) {
+            <p>Drawing pixels. Please wait...</p>
+        }
+        @if(finishedDrawing) {
+            <p>The image below is all of the pixels you placed during the event. <span class="responsive-warning">The image might look weird because your browser window is too narrow to display your image in its full width. The downloaded image will look normal.</span></p>
+        }
+        <button (click)="downloadImage()" class="btn green">Download your pixels as a PNG</button>
+        <canvas id="myCanvas" #pixelCanvas width="1000" height="500">Your browser does not support the HTML canvas tag.</canvas>
+        <hr />
+        <p>If you would like an image created such as the top 100 users, the canvas in reversed order, all pixels from an instance, all pixels within an area, or really any other combination of pixels you can think of, just message me and I'll send you an image of your request.</p>
+    </main>
+<app-footer />
+    
 

@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ColorCount, Ranking, WarCord, TopCord, UserColorCount } from '../models';
+import { Ranking, WarCord, TopCord, UserColorCount } from '../models';
 import { CanvasService } from '../canvas.service';
+import { Router } from '@angular/router';
+import { NavbarComponent } from "../navbar/navbar.component";
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, NavbarComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -24,9 +27,11 @@ export class HomeComponent implements OnInit {
   userColorCount!: UserColorCount;
   topCord!: TopCord;
   warCord: WarCord = new WarCord("", []);
+  paramUsername: string = "";
 
   constructor(
-    private canvasService: CanvasService
+    private canvasService: CanvasService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -77,10 +82,12 @@ export class HomeComponent implements OnInit {
       } else {
         this.warCord = userWarCord;
       }
-
-      
     }
-    
+  }
+
+  sendUserToDraw() {
+    let paramUsername = this.username.replace('.', '[]');
+    this.router.navigateByUrl(`/draw/${this.username}`);
   }
   
 }

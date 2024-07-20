@@ -1,11 +1,10 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, Subject } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 import { Ranking, TopCord, UserColorCount, WarCord } from "./models";
 
 @Injectable({ providedIn: 'root' })
 export class CanvasService {
-
     constructor(
         private http: HttpClient
     ) { }
@@ -24,6 +23,11 @@ export class CanvasService {
 
     getAllWarCords(): Observable<WarCord[]> {
         return this.http.get<WarCord[]>('https://therealmonte.github.io/api/warCord.json');
+    }
+
+    getPixelData() {
+        return this.http.get('https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/pixels.csv', {responseType: 'text'});
+
     }
 
 
