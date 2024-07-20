@@ -3,7 +3,41 @@
 1972 users from 302 instances participated in the event.
 
 There were 642338 pixels placed on the canvas. Of those pixels, 408881 are the final pixels on the canvas, making the canvas 81.7762% covered at the end of the event. Here are the counts for each color pixel placed:
-![white](/colorCountIMG/white.png "white") ![](/colorCountIMG/lightGrey.png) ![](/colorCountIMG/mediumGrey.png) ![](/colorCountIMG/deepGrey.png) ![](/colorCountIMG/darkGrey.png) ![](/colorCountIMG/black.png) ![](/colorCountIMG/darkChocolate.png) ![](/colorCountIMG/chocolate.png) ![](/colorCountIMG/chocolate.png) ![](/colorCountIMG/brown.png) ![](/colorCountIMG//peach.png) ![](/colorCountIMG/beige.png) ![](/colorCountIMG/pink.png) ![](/colorCountIMG/magenta.png) ![](/colorCountIMG/mauve.png) ![](/colorCountIMG/purple.png) ![](/colorCountIMG/darkPurple.png) ![](/colorCountIMG/navy.png) ![](/colorCountIMG/blue.png) ![](/colorCountIMG/azure.png) ![aqua](https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2024%20Stats/colorCountIMG/aqua.png "aqua") ![](/colorCountIMG/lightTeal.png) ![](/colorCountIMG/darkTeal.png) ![](/colorCountIMG/forest.png) ![](/colorCountIMG/darkGreen.png) ![](/colorCountIMG/green.png) ![](/colorCountIMG/lime.png) ![](/colorCountIMG/pastelYellow.png) ![](/colorCountIMG/yellow.png) ![](/colorCountIMG/orange.png) ![](/colorCountIMG/rust.png) ![](/colorCountIMG/maroon.png) ![](/colorCountIMG/rose.png) ![](/colorCountIMG/red.png) ![](/colorCountIMG/watermelon.png)
+
+* White: 55152
+* Light Grey: 20011
+* Medium Grey: 13057
+* Deep Grey: 12730
+* Dark Grey: 12810
+* Black: 119468
+* Dark Chocolate: 5388
+* Chocolate: 8724
+* Brown: 6996
+* Peach: 4138
+* Beige: 8040
+* Pink: 23204
+* Magenta: 8536
+* Mauve: 6421
+* Purple: 12185
+* Dark Purple: 10896
+* Navy: 27663
+* Blue: 34210
+* Azure: 32045
+* Aqua: 28753
+* Light Teal: 5153
+* Dark Teal: 5216
+* Forest: 5975
+* Dark Green: 12810
+* Green: 15535
+* Lime: 4168
+* Pastel Yellow: 12417
+* Yellow: 35911
+* Orange: 12336
+* Rust: 7950
+* Maroon: 4887
+* Rose: 8750
+* Red: 54053
+* Watermelon: 3711
 
 
 The coordinate with the most pixels placed on was (10,262) with 1427 placed. The users who placed pixels on (10,262) are:
