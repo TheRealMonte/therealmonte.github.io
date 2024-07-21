@@ -47,9 +47,8 @@ The coordinate with the most pixels placed on was (175, 171) with 170 placed. Th
 * Wilker&#64;&#xfeff;lemmy&#46;&#xfeff;blahaj&#46;&#xfeff;zone: 1 time
 
 
+There are two .csv files to load the 2023 data into Canvas Stats.
+* users_2023.csv Column Headers are: username,user rank,total pixel count,top coordinate x cord,top coordinate y cord,top coordinate count
+* color_count_2023.csv Column Headers are: username,black count,dark grey count,deep grey count,medium grey count,light grey count,white count,beige count,peach count,brown count,count chocolate,rust count,orange count,yellow count,pastel yellow count,lime count,green count,dark green count,forest count,dark teal count,light teal count,aqua count,azure count,blue count,navy count,purple count,mauve count,magenta count,pink count,watermelon count,red count,rose count,maroon count
 
-Here are the stats for each user in txt files:
-* [Click here](https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2023%20Stats/rankings.txt) to view the user rankings
-* [Click here](https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2023%20Stats/color_count.txt) to see how many pixels of each color every user placed.
-* [Click here](https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2023%20Stats/top_cord.txt) to view the coordinate every user placed the most pixels on.
 
