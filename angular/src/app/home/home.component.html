@@ -3,12 +3,14 @@
     <input [(ngModel)]="username" type="text" placeholder="Enter Username Ex: grant@toast.ooo" class="Search-input" />
     <button (click)="onSubmit()" class="btn serach-color">Search</button>
 </div>
+<button (click)="changeYear(2023)">View 2023 Stats</button>
+<button (click)="changeYear(2024)">View 2024 Stats</button>
 @if (errorAlert.length > 0) {
     <p class="error-box">{{errorAlert}}</p>
 }
-@if (showAllStats) {
+@if (showYear === 2024) {
 <main>
-    <h2>Welcome to the Canvas 2024 Stats page!</h2>
+    <h2>Welcome to the 2024 Canvas Stats page!</h2>
     <p>To see how you did during the event, enter your full username in the search bar above in the format username&#64;instance. It is case-sensitive and matches how your username is display on your profile.</p>
     <p>1972 users from 302 instances participated in the event.</p>
     <p>There were 642338 pixels placed on the canvas. Of those pixels, 408881 are the final pixels on the canvas, making the canvas 81.7762% covered at the end of the event. Here are the counts for each color pixel placed:</p>
@@ -60,63 +62,59 @@
             <li>hdggDalton&#64;toast.ooo: 1 time</li>
         </ul>
 </main>
-<app-footer />
 }
-@if (showResults) {
-<main>
-    <h2>Hello, {{userRanking.userName}}!</h2>
-    <p>Your ranking: {{userRanking.ranking}} out of 1972 users.</p>
-    @if (warCord.users.length > 0) {
-        <p>It looks like you were in a battle with other users. Here are all the users that had {{topCord.topCord}} as their most placed coordinate:</p>
-        <ul>
-            @for (warUsers of warCord.users; track warUsers) {
-                <li>{{warUsers}} times</li>
-            }
-        </ul>
-    }
-    @if (warCord.users.length < 1) {
-        <p>The coordinate you placed the most pixels on was {{topCord.topCord}} - {{topCord.count}} times.</p>
-    }
-    <p>You placed {{userRanking.pixelCount}} pixels throughout the event! Here is how many of each color you placed:</p>
-    <div class="colors-wrapper">
-        <span class="white count">White: {{userColorCount.colors.White}}</span>
-        <span class="count lightGrey">Light Grey: {{userColorCount.colors.LightGrey}}</span>
-        <span class="count mediumGrey">Medium Grey: {{userColorCount.colors.MediumGrey}}</span>
-        <span class="count deepGrey">Deep Grey: {{userColorCount.colors.DeepGrey}}</span>
-        <span class="count darkGrey">Dark Grey: {{userColorCount.colors.DarkGrey}}</span>
-        <span class="count black">Black: {{userColorCount.colors.Black}}</span>
-        <span class="count darkChocolate">Dark Chocolate: {{userColorCount.colors.DarkChocolate}}</span>
-        <span class="count chocolate">Chocolate: {{userColorCount.colors.Chocolate}}</span>
-        <span class="count brown">Brown: {{userColorCount.colors.Brown}}</span>
-        <span class="count peach">Peach: {{userColorCount.colors.Peach}}</span>
-        <span class="count beige">Beige: {{userColorCount.colors.Beige}}</span>
-        <span class="count pink">Pink: {{userColorCount.colors.Pink}}</span>
-        <span class="count magenta">Magenta: {{userColorCount.colors.Magenta}}</span>
-        <span class="count mauve">Mauve: {{userColorCount.colors.Mauve}}</span>
-        <span class="count purple">Purple: {{userColorCount.colors.Purple}}</span>
-        <span class="count darkPurple">Dark Purple: {{userColorCount.colors.DarkPurple}}</span>
-        <span class="count navy">Navy: {{userColorCount.colors.Navy}}</span>
-        <span class="count blue">Blue: {{userColorCount.colors.Blue}}</span>
-        <span class="count azure">Azure: {{userColorCount.colors.Azure}}</span>
-        <span class="count aqua">Aqua: {{userColorCount.colors.Aqua}}</span>
-        <span class="count lightTeal">Light Teal: {{userColorCount.colors.LightTeal}}</span>
-        <span class="count darkTeal">Dark Teal: {{userColorCount.colors.DarkTeal}}</span>
-        <span class="count forest">Forest: {{userColorCount.colors.Forest}}</span>
-        <span class="count darkGreen">Dark Green: {{userColorCount.colors.DarkGreen}}</span>
-        <span class="count green">Green: {{userColorCount.colors.Green}}</span>
-        <span class="count lime">Lime: {{userColorCount.colors.Lime}}</span>
-        <span class="count pastelYellow">Pastel Yellow: {{userColorCount.colors.PastelYellow}}</span>
-        <span class="count yellow">Yellow: {{userColorCount.colors.Yellow}}</span>
-        <span class="count orange">Orange: {{userColorCount.colors.Orange}}</span>
-        <span class="count rust">Rust: {{userColorCount.colors.Rust}}</span>
-        <span class="count maroon">Maroon: {{userColorCount.colors.Maroon}}</span>
-        <span class="count rose">Rose: {{userColorCount.colors.Rose}}</span>
-        <span class="count red">Red: {{userColorCount.colors.Red}}</span>
-        <span class="count watermelon">Watermelon: {{userColorCount.colors.Watermelon}}</span>
-    </div>
-    <section class="btn-wrapper">
-        <button (click)="sendUserToDraw()" class="btn darkGreen">Click here to see the pixels you placed</button>
-    </section>
-</main>
+@if (showYear === 2023) {
+    <main>
+        <h2>Welcome to the 2023 Canvas Stats page!</h2>
+        <p>To see how you did during the event, enter your full username in the search bar above in the format username&#64;instance. It is case-sensitive and matches how your username is display on your profile.</p>
+        <p>2277 users from 132 instances participated in the event in 2023.</p>
+        <p>There were 628416 pixels placed on the canvas. Here are the counts for each color pixel placed:</p>
+        <div class="colors-wrapper">
+            <span class="white count">White: 22488</span>
+            <span class="count lightGrey">Light Grey: 20308</span>
+            <span class="count mediumGrey">Medium Grey: 15799</span>
+            <span class="count deepGrey">Deep Grey: 13864</span>
+            <span class="count darkGrey">Dark Grey: 19708</span>
+            <span class="count black">Black: 123666</span> 
+            <span class="count chocolate">Chocolate: 9669</span>
+            <span class="count brown">Brown: 8535</span>
+            <span class="count peach">Peach: 5790</span>
+            <span class="count beige">Beige: 4821</span>
+            <span class="count pink">Pink: 18566</span>
+            <span class="count magenta">Magenta: 4554</span>
+            <span class="count mauve">Mauve: 10180</span>
+            <span class="count purple">Purple: 17346</span>
+            <span class="count navy">Navy: 17594</span>
+            <span class="count blue">Blue: 58856</span>
+            <span class="count azure">Azure: 33653</span>
+            <span class="count aqua">Aqua: 12588</span>
+            <span class="count lightTeal">Light Teal: 5695</span>
+            <span class="count darkTeal">Dark Teal: 4701</span>
+            <span class="count forest">Forest: 9478</span>
+            <span class="count darkGreen">Dark Green: 19377</span>
+            <span class="count green">Green: 12612</span>
+            <span class="count lime">Lime: 5585</span>
+            <span class="count pastelYellow">Pastel Yellow: 8543</span>
+            <span class="count yellow">Yellow: 32473</span>
+            <span class="count orange">Orange: 14841</span>
+            <span class="count rust">Rust: 19064</span>
+            <span class="count maroon">Maroon: 4218</span>
+            <span class="count rose">Rose: 10948</span>
+            <span class="count red">Red: 55683</span>
+            <span class="count watermelon">Watermelon: 7213</span>
+        </div>
+        <p>The coordinate with the most pixels placed on was (175, 171) with 170 placed. The users who placed pixels on (175, 171) are:</p>
+            <ul>
+                <li>Depress_mode&#64;&#xfeff;lemmy.world: 82 times</li>
+                <li>Kalcifer&#64;&#xfeff;lemmy.world: 77 times</li>
+                <li>anonymous1691293996&#64;&#xfeff;lemmy&#46;&#xfeff;world: 4 times</li>
+                <li>anonymous1691294527&#64;&#xfeff;lemmy&#46;&#xfeff;world: 3 times</li>
+                <li>anonymous1691296202&#64;&#xfeff;lemmy&#46;&#xfeff;world: 1 time</li>
+                <li>depress_mode&#64;&#xfeff;lemmy&#46;&#xfeff;world: 1 time</li>
+                <li>bstix&#64;&#xfeff;feddit&#46;&#xfeff;dk: 1 time</li>
+                <li>Wilker&#64;&#xfeff;lemmy&#46;&#xfeff;blahaj&#46;&#xfeff;zone: 1 time</li>
+            </ul>
+    </main>
+}
 
-}
+<app-footer />

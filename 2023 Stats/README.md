@@ -37,14 +37,14 @@ There were 628416 pixels placed on the canvas. Here are the counts for each colo
 
 
 The coordinate with the most pixels placed on was (175, 171) with 170 placed. The users who placed pixels on (175, 171) are:
-* Kalcifer&#64;&#xfeff;lemmy.world: 77 times
 * Depress_mode&#64;&#xfeff;lemmy.world: 82 times
+* Kalcifer&#64;&#xfeff;lemmy.world: 77 times
 * anonymous1691293996&#64;&#xfeff;lemmy&#46;&#xfeff;world: 4 times
-* anonymous1691296202&#64;&#xfeff;lemmy&#46;&#xfeff;world: 1 times
 * anonymous1691294527&#64;&#xfeff;lemmy&#46;&#xfeff;world: 3 times
-* depress_mode&#64;&#xfeff;lemmy&#46;&#xfeff;world: 1 times
-* bstix&#64;&#xfeff;feddit&#46;&#xfeff;dk: 1 times
-* Wilker&#64;&#xfeff;lemmy&#46;&#xfeff;blahaj&#46;&#xfeff;zone: 1 times
+* anonymous1691296202&#64;&#xfeff;lemmy&#46;&#xfeff;world: 1 time
+* depress_mode&#64;&#xfeff;lemmy&#46;&#xfeff;world: 1 time
+* bstix&#64;&#xfeff;feddit&#46;&#xfeff;dk: 1 time
+* Wilker&#64;&#xfeff;lemmy&#46;&#xfeff;blahaj&#46;&#xfeff;zone: 1 time
 
 
 
