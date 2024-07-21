@@ -30,5 +30,13 @@ export class CanvasService {
 
     }
 
+    get2023Users() {
+        return this.http.get('https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2023%20Stats/users_2023.csv', {responseType: 'text'});
+    }
+
+    get2023ColorCount() {
+        return this.http.get('https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2023%20Stats/color_count_2023.csv', {responseType: 'text'});
+    }
+
 
 }

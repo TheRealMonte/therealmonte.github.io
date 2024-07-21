@@ -4,11 +4,12 @@ import { CanvasService } from '../canvas.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NavbarComponent } from "../navbar/navbar.component";
 import { FooterComponent } from "../footer/footer.component";
+import { LoadingComponent } from "../loading/loading.component";
 
 @Component({
   selector: 'app-stats-2024',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent],
+  imports: [NavbarComponent, FooterComponent, LoadingComponent],
   templateUrl: './stats-2024.component.html',
   styleUrl: '../home/home.component.css'
 })
@@ -26,6 +27,7 @@ export class Stats2024Component implements OnInit {
   userColorCount!: UserColorCount;
   topCord!: TopCord;
   warCord: WarCord = new WarCord("", []);
+  loading: boolean = true;
 
   ngOnInit(): void {
     let paramUsername = this.route.snapshot.paramMap.get('id');
@@ -45,6 +47,7 @@ export class Stats2024Component implements OnInit {
       this.allWarCords = data;
     });
     this.tryGetUserInfo();
+    this.loading = false;
   }
 
   constructor(

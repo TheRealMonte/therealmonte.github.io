@@ -13,7 +13,6 @@ import { FooterComponent } from "../footer/footer.component";
 })
 export class HomeComponent {
   showYear: number = 2024;
-  paramUsername: string = "";
   errorAlert: string = "";
   username: string = "";
 
@@ -32,6 +31,10 @@ export class HomeComponent {
 
   changeYear(year: number) {
     this.showYear = year;
+  }
+
+  showColorIMG(color: string) {
+    this.router.navigateByUrl(`/draw-color/${color}`);
   }
 
   

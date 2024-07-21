@@ -80,6 +80,9 @@ main {
     background-color: white;
     color: black;
 }
+.link {
+    cursor: pointer;
+}
 .lightGrey {
     background-color: #b9c3cf;
     color: black;

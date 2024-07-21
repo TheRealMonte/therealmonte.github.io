@@ -1,4 +1,7 @@
 <app-navbar />
+@if (loading) {
+    <app-loading />
+}
 @if (wasUserFound === false) {
     <main>
         <p>Sorry, it looks like you didn't place any pixels during the 2024 event.</p>
@@ -10,17 +13,7 @@
     <main>
         <h2>Hello, {{userRanking.userName}}!</h2>
         <p>Your ranking: {{userRanking.ranking}} out of 1972 users.</p>
-        @if (warCord.users.length > 0) {
-            <p>It looks like you were in a battle with other users. Here are all the users that had {{topCord.topCord}} as their most placed coordinate:</p>
-            <ul>
-                @for (warUsers of warCord.users; track warUsers) {
-                    <li>{{warUsers}} times</li>
-                }
-            </ul>
-        }
-        @if (warCord.users.length < 1) {
-            <p>The coordinate you placed the most pixels on was {{topCord.topCord}} - {{topCord.count}} times.</p>
-        }
+        <p>The coordinate you placed the most pixels on was {{topCord.topCord}} - {{topCord.count}} times.</p>
         <p>You placed {{userRanking.pixelCount}} pixels throughout the event! Here is how many of each color you placed:</p>
         <div class="colors-wrapper">
             <span class="white count">White: {{userColorCount.colors.White}}</span>

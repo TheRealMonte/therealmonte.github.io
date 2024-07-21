@@ -1,1 +1,11 @@
-<p>draw-color works!</p>
+<app-navbar />
+<main>
+    <a href="/" class="btn blue"><span class="material-symbols-outlined">
+        arrow_back
+        </span>Back</a>
+    <p>Here are all of the {{colorName}} pixels drawn durning the 2024 event.</p>
+    <div class="img-wrapper">
+        <img [src]="imgSRC" [alt]="colorName"/>
+    </div>
+</main>
+<app-footer />

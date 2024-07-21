@@ -4,10 +4,10 @@
         arrow_back
         </span> Back</a>
         @if(!finishedDrawing) {
-            <p>Drawing pixels. Please wait...</p>
+            <app-loading />
         }
         @if(finishedDrawing) {
-            <p>The image below is all of the pixels you placed during the event. <span class="responsive-warning">The image might look weird because your browser window is too narrow to display your image in its full width. The downloaded image will look normal.</span></p>
+            <p>The image below is all of the pixels you placed during the 2024 event. <span class="responsive-warning">The image might look weird because your browser window is too narrow to display your image in its full width. The downloaded image will look normal.</span></p>
         }
         <button (click)="downloadImage()" class="btn green">Download your pixels as a PNG</button>
         <canvas id="myCanvas" #pixelCanvas width="1000" height="500">Your browser does not support the HTML canvas tag.</canvas>

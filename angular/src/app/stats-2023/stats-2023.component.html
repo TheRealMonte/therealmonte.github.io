@@ -1,6 +1,57 @@
 <app-navbar />
-{{username}}
-@if (showAllStats) {
-    
-    }
+@if (loading) {
+    <app-loading />
+}
+@if (!loading) {
+    @if (!wasUserFound) {
+        <main>
+            <p>Sorry, it looks like you didn't place any pixels during the 2023 event. You can try <a href="/users/2023">looking at the list of users for 2023</a> and see if you can find your username. If you still can't find your username and you truely believe you did participate in 2023, send me a DM and I can check the database.</p>
+        </main>
+        }
+        @if (wasUserFound) {
+            <main>
+                <h2>Hello, {{user.username}}!</h2>
+                <p>Your ranking: {{user.userRank}} out of 1972 users.</p>
+                <p>The coordinate you placed the most pixels on was ({{user.xCord}}, {{user.yCord}}) - {{user.cordCount}} times.</p>
+                <p>You placed {{user.pixelCount}} pixels throughout the event! Here is how many of each color you placed:</p>
+                <div class="colors-wrapper">
+                    <span class="white count">White: {{userColors.white}}</span>
+                    <span class="count lightGrey">Light Grey: {{userColors.lightGrey}}</span>
+                    <span class="count mediumGrey">Medium Grey: {{userColors.mediumGrey}}</span>
+                    <span class="count deepGrey">Deep Grey: {{userColors.deepGrey}}</span>
+                    <span class="count darkGrey">Dark Grey: {{userColors.darkGrey}}</span>
+                    <span class="count black">Black: {{userColors.black}}</span>
+                    <span class="count chocolate">Chocolate: {{userColors.chocolate}}</span>
+                    <span class="count brown">Brown: {{userColors.brown}}</span>
+                    <span class="count peach">Peach: {{userColors.peach}}</span>
+                    <span class="count beige">Beige: {{userColors.beige}}</span>
+                    <span class="count pink">Pink: {{userColors.pink}}</span>
+                    <span class="count magenta">Magenta: {{userColors.magenta}}</span>
+                    <span class="count mauve">Mauve: {{userColors.mauve}}</span>
+                    <span class="count purple">Purple: {{userColors.purple}}</span>
+                    <span class="count navy">Navy: {{userColors.navy}}</span>
+                    <span class="count blue">Blue: {{userColors.blue}}</span>
+                    <span class="count azure">Azure: {{userColors.azure}}</span>
+                    <span class="count aqua">Aqua: {{userColors.aqua}}</span>
+                    <span class="count lightTeal">Light Teal: {{userColors.lightTeal}}</span>
+                    <span class="count darkTeal">Dark Teal: {{userColors.darkTeal}}</span>
+                    <span class="count forest">Forest: {{userColors.forest}}</span>
+                    <span class="count darkGreen">Dark Green: {{userColors.darkGreen}}</span>
+                    <span class="count green">Green: {{userColors.green}}</span>
+                    <span class="count lime">Lime: {{userColors.lime}}</span>
+                    <span class="count pastelYellow">Pastel Yellow: {{userColors.pastelYellow}}</span>
+                    <span class="count yellow">Yellow: {{userColors.yellow}}</span>
+                    <span class="count orange">Orange: {{userColors.orange}}</span>
+                    <span class="count rust">Rust: {{userColors.rust}}</span>
+                    <span class="count maroon">Maroon: {{userColors.maroon}}</span>
+                    <span class="count rose">Rose: {{userColors.rose}}</span>
+                    <span class="count red">Red: {{userColors.red}}</span>
+                    <span class="count watermelon">Watermelon: {{userColors.watermelon}}</span>
+                </div>
+                <section class="btn-wrapper">
+                    <button (click)="sendUserTo2024Stats()" class="btn darkGreen">See your 2024 Stats</button>
+                </section>
+            </main>
+        }
+}
 <app-footer />

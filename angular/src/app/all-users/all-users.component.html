@@ -1,0 +1,13 @@
+<app-navbar />
+@if (loading) {
+    <app-loading />
+}
+@if (!loading) {
+    <h2>Here are all the users that participated in the {{year}} Canvas event:</h2>
+    @for (user of users; track user) {
+        <article (click)="goToUser(user.username)">
+            {{user.userRank}}: {{user.username}}
+        </article>
+    }
+}
+<app-footer />

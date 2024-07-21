@@ -4,11 +4,12 @@ import { CanvasService } from '../canvas.service';
 import { ActivatedRoute } from '@angular/router';
 import { NavbarComponent } from "../navbar/navbar.component";
 import { FooterComponent } from "../footer/footer.component";
+import { LoadingComponent } from "../loading/loading.component";
 
 @Component({
   selector: 'app-draw',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent],
+  imports: [NavbarComponent, FooterComponent, LoadingComponent],
   templateUrl: './draw.component.html',
   styleUrl: './draw.component.css'
 })
