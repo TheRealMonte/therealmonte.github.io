@@ -49,7 +49,6 @@ The coordinate with the most pixels placed on was (10,262) with 1427 placed. The
 * hdggDalton&#64;&#xfeff;toast&#46;&#xfeff;ooo: 1 time
 
 
-Here are the stats for each user in txt files:
-* [Click here](https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2024%20Stats/ranking.txt) to view the user rankings.
-* [Click here](https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2024%20Stats/user_color_count.txt) to see how many pixels of each color every user placed.
-* [Click here](https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/2024%20Stats/user_top_cord.txt) to view the coordinate every user placed the most pixels on.
+There are 2 csv file to load the 2024 data into Canvas Stats:
+* users_2024.csv Column Headers are: username,user_rank,pixel_count,x_cord,y_cord,cord_count
+* color_count_2024.csv Column Headers are: username,black,dark_grey,deep_grey,medium_grey,light_grey,white,beige,peach,brown,chocolate,rust,orange,yellow,pastel_yellow,lime,green,dark_green,forest,dark_teal,light_teal,aqua,azure,blue,navy,purple,mauve,magenta,pink,watermelon,red,rose,maroon,dark_chocolate,dark_purple
