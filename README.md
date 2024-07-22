@@ -16,5 +16,10 @@ Feel free to message me on lemmy, [the_real_monte@sh.itjust.works](https://sh.it
 
 [Click here](https://therealmonte.github.io/) to view the Canvas Stats app.
 
+
+
+
+
+
 ![View a user's stats](/screenshots/stats-view.png "View a user's stats")
 ![View a user's placed pixels](/screenshots/pixel-view.png "View a user's placed pixels")
