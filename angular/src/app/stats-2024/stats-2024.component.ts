@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Ranking, TopCord, User, UserColorCount, UserColors2024, WarCord } from '../models';
+import { User, UserColors2024 } from '../models';
 import { CanvasService } from '../canvas.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NavbarComponent } from "../navbar/navbar.component";
@@ -14,7 +14,7 @@ import { LoadingComponent } from "../loading/loading.component";
   styleUrl: '../home/home.component.css'
 })
 export class Stats2024Component implements OnInit {
-  showResults: boolean = true;
+  showResults: boolean = false;
   username: string ="";
   user!: User;
   userColors!: UserColors2024;

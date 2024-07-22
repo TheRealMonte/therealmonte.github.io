@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, ViewChild, AfterViewInit  } from '@angular/core';
 import { CanvasService } from '../canvas.service';
 import { ActivatedRoute, Router } from '@angular/router';

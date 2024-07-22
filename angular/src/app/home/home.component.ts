@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NavbarComponent } from "../navbar/navbar.component";
@@ -38,8 +38,7 @@ export class HomeComponent {
     this.router.navigateByUrl(`/draw-color/${color}`);
   }
 
-  
-
-  
-  
+  seeAllUser() {
+    this.router.navigateByUrl(`/users/${this.showYear}`);
+  }
 }
