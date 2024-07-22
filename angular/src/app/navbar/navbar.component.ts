@@ -20,7 +20,13 @@ export class NavbarComponent {
 
   onSubmit() {
     if (this.searchString != this.username) {
-      this.router.navigateByUrl(`/${this.year}/${this.username}`);
+      this.username = this.searchString;
+      if (this.year === 2024) {
+        this.router.navigateByUrl(`/2024/${this.username}`);
+      } else {
+        this.router.navigateByUrl(`/2023/${this.username}`);
+      }
+      
     setTimeout(() => {
       window.location.reload();
     }, 50);

@@ -20,15 +20,6 @@ export class HomeComponent {
     private router: Router
   ) {}
 
-  onSubmit() {
-    if (this.showYear === 2024) {
-      this.router.navigateByUrl(`/2024/${this.username}`);
-    }
-    if (this.showYear === 2023) {
-      this.router.navigateByUrl(`/2023/${this.username}`);
-    }
-  }
-
   changeYear() {
     if (this.showYear === 2023) {
       this.showYear = 2024;

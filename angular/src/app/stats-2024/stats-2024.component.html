@@ -4,7 +4,7 @@
 }
 @if (wasUserFound === false) {
     <main>
-        <p>Sorry, it looks like you didn't place any pixels during the 2024 event. You can try <a href="/users/2024">looking at the list of users for 2024</a> and see if you can find your username. If you still can't find your username and you truely believe you did participate in 2024, send me a DM <a href="https://sh.itjust.works/u/the_real_monte">&#64;the_real_monte</a> and I can check the database.</p>
+        <p>Sorry, it looks like you didn't place any pixels during the 2024 event. You can try <a (click)="sendToUsersList(2024)" class="link">Click here</a> to view the list of users for 2024 and see if you can find your username. If you still can't find your username and you truely believe you did participate in 2024, send me a DM <a href="https://sh.itjust.works/u/the_real_monte">&#64;the_real_monte</a> and I can check the database.</p>
     </main>
 }
 @if (showResults) {
