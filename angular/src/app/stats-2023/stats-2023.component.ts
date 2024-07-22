@@ -14,11 +14,11 @@ import { LoadingComponent } from "../loading/loading.component";
   styleUrl: '../home/home.component.css'
 })
 export class Stats2023Component implements OnInit {
-  showAllStats: boolean = false;
+  showStats: boolean = false;
   username: string ="";
   user!: User;
   userColors!: UserColors2023;
-  wasUserFound: boolean = false;
+  wasUserFound: boolean = true;
   loading: boolean = true;
   
   ngOnInit(): void {
@@ -46,10 +46,17 @@ export class Stats2023Component implements OnInit {
             this.user = new User(cols[0], +cols[1], +cols[2], +cols[3], +cols[4], +cols[5]);
             console.log(this.user);
             this.wasUserFound = true;
-            this.showAllStats = true;
+            this.showStats = true;
           }
         }
-        this.getColorData();
+        if (this.user == undefined) {
+          this.showStats = false;
+          this.wasUserFound = false;
+          this.loading = false;
+        } else {
+          this.getColorData();
+          this.loading = false;
+        }
       });
     }
 

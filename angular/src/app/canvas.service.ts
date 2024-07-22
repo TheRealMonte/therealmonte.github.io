@@ -12,10 +12,11 @@ export class CanvasService {
     }
 
     getUsers(year: number) {
-        return this.http.get(`https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/${year}%20Stats/users_${year}.csv`, {responseType: 'text'});
+        return this.http.get(`https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/stats-${year}/users_${year}.csv`, {responseType: 'text'});
     }
 
     getColorCount(year: number) {
-        return this.http.get(`https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/${year}%20Stats/color_count_${year}.csv`, {responseType: 'text'});
+        return this.http.get(`https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/stats-${year}/color_count_${year}.csv`, {responseType: 'text'});
     }
 }
+

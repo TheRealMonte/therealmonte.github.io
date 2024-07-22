@@ -18,7 +18,7 @@ export class Stats2024Component implements OnInit {
   username: string ="";
   user!: User;
   userColors!: UserColors2024;
-  wasUserFound: boolean = false;
+  wasUserFound: boolean = true;
   loading: boolean = true;
 
   ngOnInit(): void {
@@ -49,7 +49,12 @@ export class Stats2024Component implements OnInit {
           this.showResults = true;
         }
       }
-      this.getColorData();
+      if (this.user == undefined) {
+        this.showResults = false;
+        this.wasUserFound = false;
+      } else {
+        this.getColorData();
+      }
     });
   }
 
