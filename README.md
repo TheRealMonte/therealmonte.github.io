@@ -3,7 +3,7 @@ Hello!
 
 I have created an app that lets you view data from the [Canvas event](https://canvas.fediverse.events/). The data was taken from the sql file [Grant](https://toast.ooo/u/grant) provided. It is possible some pixels are missing due to the Canvas server crashing a few times during the 2024 event.
 
-## Canvas Stats Features
+### Canvas Stats Features
 * View the final stats for both the 2023 and 2024 events, such as the number of pixels placed of each color or number of instance's users that participated in the events.
 * View the User rankings list for 2023 and 2024
 * For the 2024 event, view images of just one color of pixels placed on the canvas (see screenshot #4)
@@ -15,6 +15,7 @@ Feel free to message me on lemmy, [@the_real_monte](https://sh.itjust.works/u/th
 
 [Click here](https://therealmonte.github.io/) to view the Canvas Stats app.
 
+### Screenshots
 <p align="center" width="100%">
     <img width="24%" src="https://github.com/TheRealMonte/therealmonte.github.io/blob/main/screenshots/home.png" alt="The home page" title="The home page" />
     <img width="24%" src="https://github.com/TheRealMonte/therealmonte.github.io/blob/main/screenshots/user-view.png" alt="Viewing a user's stats" title="Viewing a user's stats" />
