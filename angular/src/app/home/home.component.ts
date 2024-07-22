@@ -14,7 +14,6 @@ import { LoadingComponent } from "../loading/loading.component";
 })
 export class HomeComponent {
   showYear: number = 2024;
-  errorAlert: string = "";
   username: string = "";
 
   constructor(
@@ -30,8 +29,12 @@ export class HomeComponent {
     }
   }
 
-  changeYear(year: number) {
-    this.showYear = year;
+  changeYear() {
+    if (this.showYear === 2023) {
+      this.showYear = 2024;
+    } else {
+      this.showYear = 2023;
+    }
   }
 
   showColorIMG(color: string) {

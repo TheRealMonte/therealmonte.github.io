@@ -11,29 +11,25 @@ import { FooterComponent } from "../footer/footer.component";
   styleUrl: './draw-color.component.css'
 })
 export class DrawColorComponent implements OnInit {
-  colorName: string =""
+  colorName: string = "";
+  colorUrl: string = "";
   imgSRC: string = "";
 
   ngOnInit(): void {
     let paramColor = this.route.snapshot.paramMap.get('id');
     if (paramColor != null) {
-      this.colorName = paramColor.replace("-", " ");
-    }
-    switch(this.colorName) {
-      case 'aqua': {
-        this.imgSRC = "https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/pixel%20color%20images/Aqua.png";
-        break;
-      }
-      case 'azure': {
-        this.imgSRC = "https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/pixel%20color%20images/Azure.png";
-        break;
-      }
-      case 'beige': {
-        this.imgSRC = "https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/pixel%20color%20images/Beige.png";
-        break;
+      let colorParts: string[] = paramColor.split("-");
+      if (colorParts.length>1) {
+        let first = colorParts[0];
+        let second = colorParts[1].charAt(0).toUpperCase() + colorParts[1].slice(1);
+        this.colorUrl = first + second;
+        this.colorName = paramColor.replace("-", " ");
+      } else {
+        this.colorName = paramColor;
+        this.colorUrl = paramColor;
       }
     }
-    
+    this.imgSRC = `https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/pixel%20color%20images/${this.colorUrl}.png`;
   }
 
   constructor(

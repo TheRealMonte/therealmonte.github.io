@@ -1,18 +1,95 @@
-.links-wrapper {
+header {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+}
+header h1 {
+    font-size: 70px;
+    margin: 0 10px;
+    font-family: "Pixelify Sans", sans-serif;
 }
 
-.links-wrapper a {
-    border-radius: 10px;
-    border: 0;
+.logo-link {
+    color: black;
     text-decoration: none;
-    margin: 5px;
+}
+
+#logo {
+    position: relative;
+    display: block;
+    width: 70px;
+    height: 70px;
+}
+.logo-square {
+    display: block;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+}
+
+.back {
+    background-color: #f30f0c;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.front {
+    background-color: #18862f;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}
+nav {
+    margin: 10px;
     padding: 10px;
-    text-align: center;
+    border-radius: 50px;
     box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
-    font-size: 20px;
-    background-color: #a630d2;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    margin: 0 10px;
     color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.search-wrapper {
+    max-width: 900px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+input[type="text"],
+select {
+    width: 70%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 610px) {
+    header h1 {
+        font-size: 40px;
+    }
+    #logo {
+        width: 50px;
+        height: 50px;
+    }
+    .logo-square {
+        width: 35px;
+        height: 35px;
+    }
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
 }
