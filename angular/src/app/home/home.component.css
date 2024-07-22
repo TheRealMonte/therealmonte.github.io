@@ -23,3 +23,7 @@
     margin: 5px;
     padding: 5px;
 }
+
+.color-link {
+    cursor: pointer;
+}

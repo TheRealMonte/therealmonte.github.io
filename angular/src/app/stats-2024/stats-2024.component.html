@@ -4,12 +4,12 @@
 }
 @if (wasUserFound === false) {
     <main>
-        <p>Sorry, it looks like you didn't place any pixels during the 2024 event. You can try <a (click)="sendToUsersList(2024)" class="link">Click here</a> to view the list of users for 2024 and see if you can find your username. If you still can't find your username and you truely believe you did participate in 2024, send me a DM <a href="https://sh.itjust.works/u/the_real_monte">&#64;the_real_monte</a> and I can check the database.</p>
+        <p>Sorry, it looks like you didn't place any pixels during the 2024 event. <a (click)="sendToUsersList(2024)" class="link">Click here</a> to view the list of users for 2024 and see if you can find your username. If you still can't find your username and you truely believe you did participate in 2024, send me a DM <a href="https://sh.itjust.works/u/the_real_monte">&#64;the_real_monte</a> and I can check the database.</p>
     </main>
 }
 @if (showResults) {
     <main>
-        <h2>Hello, {{user.username}}!</h2>
+        <h2>Hello, {{user.username}}! Here is how you did in 2024</h2>
         <p>Your ranking: {{user.userRank}} out of 1972 users.</p>
         <p>The coordinate you placed the most pixels on was ({{user.xCord}}, {{user.yCord}}) - {{user.cordCount}} times.</p>
         <p>You placed {{user.pixelCount}} pixels throughout the event! Here is how many of each color you placed:</p>
