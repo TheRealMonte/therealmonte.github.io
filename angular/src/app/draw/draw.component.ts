@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, ViewChild, AfterViewInit  } from '@angular/core';
 import { CanvasService } from '../canvas.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NavbarComponent } from "../navbar/navbar.component";
 import { FooterComponent } from "../footer/footer.component";
 import { LoadingComponent } from "../loading/loading.component";
@@ -23,7 +23,8 @@ export class DrawComponent implements AfterViewInit {
 
   constructor(
     private canvasService: CanvasService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router,
   ) {}
 
   ngAfterViewInit() {
@@ -73,6 +74,10 @@ export class DrawComponent implements AfterViewInit {
     this.context.fillStyle = color;
     this.context.fillRect(xCord, yCord, 1, 1);
     console.log(color);
+  }
+
+  sendUserTo2024Stats() {
+    this.router.navigateByUrl(`/2024/${this.username}`);
   }
     
 }

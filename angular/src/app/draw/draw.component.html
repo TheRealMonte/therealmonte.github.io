@@ -1,19 +1,23 @@
 <app-navbar />
+@if(!finishedDrawing) {
+<app-loading />
+}
+@if(finishedDrawing) {
 <main>
-    <a href="/" class="btn blue"><span class="material-symbols-outlined">
-        arrow_back
-        </span> Back</a>
-        @if(!finishedDrawing) {
-            <app-loading />
-        }
-        @if(finishedDrawing) {
-            <p>The image below is all of the pixels you placed during the 2024 event. <span class="responsive-warning">The image might look weird because your browser window is too narrow to display your image in its full width. The downloaded image will look normal.</span></p>
-        }
-        <button (click)="downloadImage()" class="btn green">Download your pixels as a PNG</button>
-        <canvas id="myCanvas" #pixelCanvas width="1000" height="500">Your browser does not support the HTML canvas tag.</canvas>
-        <hr />
-        <p>If you would like an image created such as the top 100 users, the canvas in reversed order, all pixels from an instance, all pixels within an area, or really any other combination of pixels you can think of, just message me and I'll send you an image of your request.</p>
-    </main>
-<app-footer />
-    
+    <button class="btn blue" (click)="sendUserTo2024Stats()"><span class="material-symbols-outlined">
+            arrow_back
+        </span> Back</button>
+    <p>The image below is all of the pixels you placed during the 2024 event. <span class="responsive-warning">The image
+            might look weird because your browser window is too narrow to display your image in its full width. The
+            downloaded image will look normal.</span></p>
+    <button (click)="downloadImage()" class="btn green">Download your pixels as a PNG</button>
+    <canvas id="myCanvas" #pixelCanvas width="1000" height="500">Your browser does not support the HTML canvas
+        tag.</canvas>
+    <hr />
+    <p>If you would like an image created such as the top 100 users, the canvas in reversed order, all pixels from an
+        instance, all pixels within an area, or really any other combination of pixels you can think of, just message me
+        and I'll send you an image of your request.</p>
+</main>
+}
 
+<app-footer />

@@ -14,7 +14,7 @@ import { LoadingComponent } from "../loading/loading.component";
   styleUrl: '../home/home.component.css'
 })
 export class Stats2023Component implements OnInit {
-  showAllStats: boolean = true;
+  showAllStats: boolean = false;
   username: string ="";
   user!: User;
   userColors!: UserColors2023;
@@ -37,7 +37,7 @@ export class Stats2023Component implements OnInit {
   ) {}
 
     getUserData() {
-      this.canvasService.get2023Users().subscribe(data => {
+      this.canvasService.getUsers(2023).subscribe(data => {
         const list = data.split('\n');
         for (let line of list) {
           let cols = line.split(",");
@@ -46,6 +46,7 @@ export class Stats2023Component implements OnInit {
             this.user = new User(cols[0], +cols[1], +cols[2], +cols[3], +cols[4], +cols[5]);
             console.log(this.user);
             this.wasUserFound = true;
+            this.showAllStats = true;
           }
         }
         this.getColorData();
@@ -54,7 +55,7 @@ export class Stats2023Component implements OnInit {
 
     getColorData() {
       console.log("getting color counts...")
-      this.canvasService.get2023ColorCount().subscribe(data => {
+      this.canvasService.getColorCount(2023).subscribe(data => {
         const list = data.split('\n');
         for (let line of list) {
           let cols = line.split(",");

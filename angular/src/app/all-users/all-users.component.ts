@@ -14,25 +14,24 @@ import { LoadingComponent } from "../loading/loading.component";
 })
 export class AllUsersComponent implements OnInit {
   year: number = 0;
-  users: {username: string, userRank: number}[] =[];
+  users: { username: string, userRank: number }[] = [];
   loading: boolean = true
   ngOnInit(): void {
     let paramYear = this.route.snapshot.paramMap.get('id');
     if (paramYear != null) {
       this.year = +paramYear;
     }
-    if (this.year === 2023) {
-      this.canvasService.get2023Users().subscribe(data => {
-        const list = data.split('\n');
-        list.forEach(line => {
-          let cols = line.split(",");
-          let currUsername = cols[0];
-          let currUserRank = +cols[1];
-          let currUser = {username: currUsername, userRank: currUserRank};
-          this.users.push(currUser)
-        });
+    this.canvasService.getUsers(this.year).subscribe(data => {
+      const list = data.split('\n');
+      list.forEach(line => {
+        let cols = line.split(",");
+        let currUsername = cols[0];
+        let currUserRank = +cols[1];
+        let currUser = { username: currUsername, userRank: currUserRank };
+        this.users.push(currUser)
       });
-    }
+    });
+
     this.loading = false;
   }
 
@@ -40,7 +39,7 @@ export class AllUsersComponent implements OnInit {
     private route: ActivatedRoute,
     private canvasService: CanvasService,
     private router: Router
-  ) {}
+  ) { }
 
   goToUser(username: string) {
     if (this.year === 2024) {
