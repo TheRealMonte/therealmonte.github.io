@@ -16,10 +16,9 @@ Feel free to message me on lemmy, [the_real_monte@sh.itjust.works](https://sh.it
 
 [Click here](https://therealmonte.github.io/) to view the Canvas Stats app.
 
-
-
-
-
-
-![View a user's stats](/screenshots/stats-view.png "View a user's stats")
-![View a user's placed pixels](/screenshots/pixel-view.png "View a user's placed pixels")
+<p align="center" width="100%">
+    <img width="24%" src="https://github.com/TheRealMonte/therealmonte.github.io/blob/main/screenshots/home.png" alt="The home page" title="The home page" />
+    <img width="24%" src="https://github.com/TheRealMonte/therealmonte.github.io/blob/main/screenshots/stats-view.png" alt="Viewing a user's stats" title="Viewing a user's stats" />
+    <img width="24%" src="https://github.com/TheRealMonte/therealmonte.github.io/blob/main/screenshots/user-pixels.png" alt="Viewing the pixels placed by a user" title="Viewing the pixels placed by a user">
+    <img width="24%" src="https://github.com/TheRealMonte/therealmonte.github.io/blob/main/screenshots/color-view.png" alt="Viewing just the black pixels placed on the canvas" title="Viewing just the black pixels placed on the canvas">
+</p>
