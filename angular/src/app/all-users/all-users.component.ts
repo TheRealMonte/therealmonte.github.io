@@ -28,7 +28,9 @@ export class AllUsersComponent implements OnInit {
         let currUsername = cols[0];
         let currUserRank = +cols[1];
         let currUser = { username: currUsername, userRank: currUserRank };
-        this.users.push(currUser)
+        if (!isNaN(currUser.userRank)) {
+          this.users.push(currUser);
+        }
       });
     });
 
