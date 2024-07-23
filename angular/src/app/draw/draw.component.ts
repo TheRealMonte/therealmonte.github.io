@@ -69,7 +69,7 @@ export class DrawComponent implements AfterViewInit {
     let username = cols[0]
     let xCord = +cols[1];
     let yCord = +cols[2];
-    let color = "#" + cols[3];
+    let color = cols[3];
     this.context.fillStyle = color;
     this.context.fillRect(xCord, yCord, 1, 1);
     console.log(color);
