@@ -13,13 +13,13 @@
     <a href="/">Home</a>
     <a href="https://fediverse.events/">fediverse.events</a>
     <a href="https://matrix.to/#/#lemmy-canvas:matrix.org">Matrix Space</a>
-    <a href="https://discord.gg/mEUqXZw8kR">Discord Server (bridged to matrix)</a>
+    <a href="https://discord.gg/mEUqXZw8kR">Discord Server <span class="large-screens-only">(bridged to matrix)</span></a>
     <a href="https://toast.ooo/c/canvas">Lemmy</a>
 </nav>
 @if (showSearch) {
     <div class="search-wrapper">
         <input [(ngModel)]="searchString" [value]="username" type="text" placeholder="Enter Username Ex: grant@toast.ooo" class="Search-input" (keydown.enter)="onSubmit()"/>
-        <button (click)="onSubmit()" class="btn green">Search</button>
-        <button (click)="seeAllUser()" class="btn blue">All Users</button>
+        <button (click)="onSubmit()" class="btn green mobile">Search</button>
+        <button (click)="seeAllUser()" class="btn blue mobile">All Users</button>
     </div>
 }
