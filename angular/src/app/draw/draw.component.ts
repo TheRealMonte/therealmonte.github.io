@@ -64,7 +64,6 @@ export class DrawComponent implements AfterViewInit {
 }
 
   drawPixels(row: string) {
-    console.log(row);
     let cols = row.split(',');
     let username = cols[0]
     let xCord = +cols[1];
@@ -72,7 +71,6 @@ export class DrawComponent implements AfterViewInit {
     let color = cols[3];
     this.context.fillStyle = color;
     this.context.fillRect(xCord, yCord, 1, 1);
-    console.log(color);
   }
 
   sendUserTo2024Stats() {
