@@ -1,0 +1,19 @@
+{
+    "name": "Canvas Stats",
+    "short_name": "Canvas Stats",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#a630d2",
+    "background_color": "#b9c3cf",
+    "display": "standalone"
+}

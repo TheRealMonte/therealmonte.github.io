@@ -4,7 +4,7 @@ footer {
     flex-wrap: wrap;
 }
 footer a {
-    color: black;
+    color: var(--body-color);
     text-decoration: none;
     margin: 10px;
     font-size: 15p;

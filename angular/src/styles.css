@@ -1,8 +1,39 @@
 @import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0';
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Roboto+Slab:wght@100..900&display=swap');
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-background-color: #1a1a1a;
+        --body-color: #ccc;
+        --nav-background-color: #630d83;
+        --main-background-color: #2e2e2e;
+        --button-accent-one: #4169e1;
+        --button-accent-two: #28a745;
+        --button-accent-three: #c851e1;
+        --button-accent-four: #d63384;
+        --button-accent-five: #ffc107;
+        --link-color: #69b3ff;
+    }
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        --body-background-color: #b9c3cf;
+        --body-color: #000;
+        --nav-background-color: #a630d2;
+        --main-background-color: #fff;
+        --button-accent-one:#0334bf;
+        --button-accent-two: #18862f;
+        --button-accent-three: #e973ff;
+        --button-accent-four: #f14fb4;
+        --button-accent-five: #ff9f17;
+        --link-color: #5C1D8B;
+
+    }
+}
+
 body {
-    background-color: #b9c3cf;
+    background-color: var(--body-background-color);
+    color: var(--body-color);
     font-family: "Roboto Slab", serif;;
 }
 
@@ -13,7 +44,7 @@ main {
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     padding: 5px 20px;
     border-radius: 5px;
-    background-color: white;
+    background-color: var(--main-background-color);
 }
 
 #space-between-wrapper {
@@ -51,7 +82,10 @@ h2 {
 .link {
     cursor: pointer;
     text-decoration: underline;
-    color: #5C1D8B;
+    color: var(--link-color);
+}
+a {
+    color: var(--link-color);
 }
 .lightGrey {
     background-color: #b9c3cf;
