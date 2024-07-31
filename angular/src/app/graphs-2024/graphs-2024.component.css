@@ -1,0 +1,14 @@
+#heat-map,
+        #scatter-plot,
+        #pixels-per-minute {
+            width: 95%;
+            display: block;
+            margin: 10px auto;
+        }
+        #pie-chart {
+            display: block;
+            margin: 10px auto;
+        }
+        h3 {
+            text-align: center;
+        }

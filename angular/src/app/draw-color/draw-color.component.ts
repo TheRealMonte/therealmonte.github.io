@@ -29,7 +29,7 @@ export class DrawColorComponent implements OnInit {
         this.colorUrl = paramColor;
       }
     }
-    this.imgSRC = `https://raw.githubusercontent.com/TheRealMonte/therealmonte.github.io/main/pixel%20color%20images/${this.colorUrl}.png`;
+    this.imgSRC = `https://raw.githubusercontent.com/TheRealMonte/images/main/colors-2024/${this.colorUrl}.png`;
   }
 
   constructor(

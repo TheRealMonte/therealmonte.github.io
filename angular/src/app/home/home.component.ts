@@ -35,4 +35,7 @@ export class HomeComponent {
   seeAllUser() {
     this.router.navigateByUrl(`/users/${this.showYear}`);
   }
+  view2024Graphs() {
+    this.router.navigateByUrl('/graphs/2024');
+  }
 }

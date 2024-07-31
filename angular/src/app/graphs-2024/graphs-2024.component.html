@@ -1,0 +1,12 @@
+<app-navbar [year]="2024" />
+<main>
+    <h3>Pixels placed per minute</h3>
+    <img src="https://raw.githubusercontent.com/TheRealMonte/images/main/graphs-2024/pixels-placed-per-minute.png" id="pixels-per-minute" />
+    <h3>Pie chart of the colors placed</h3>
+    <img src="https://raw.githubusercontent.com/TheRealMonte/images/main/graphs-2024/pie-chart-total-color-count.png" id="pie-chart" />
+    <h3>All of the pixels placed on a scatter plot</h3>
+    <img src="https://raw.githubusercontent.com/TheRealMonte/images/main/graphs-2024/scatter-plot.jpg" id="scatter-plot" />
+    <h3>Heat map by order of pixels placed at each coordinate</h3>
+    <img src="https://raw.githubusercontent.com/TheRealMonte/images/main/graphs-2024/heatmap-with-legend.png" id="heat-map" />
+    <p>* Note: This heat map is not by how many pixels were placed on each coordinate, but the coordinates ordered from most placed to least placed. If the heat map was by the count of pixels placed, (10,262) would be shown as the max value, while the rest of the grid would be shown as the min value. (10, 262) had 1432 pixels placed on it, while the next highest coordinate had 421 pixels placed on it. The average count difference between (10, 262) and the other coordinates is 1425.395. The average count difference between the second place coordinate, (16, 262) at 421 pixels placed, is 419.395, which is still too much of a difference to create a heat map that doesn't look empty. There are 19 coordinates that have over 100 pixels placed on them, while the other 500,000 coordinates have less than 100 pixels placed on them.</p>
+</main>

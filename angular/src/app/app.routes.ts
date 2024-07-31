@@ -6,6 +6,7 @@ import { Stats2023Component } from './stats-2023/stats-2023.component';
 import { DrawColorComponent } from './draw-color/draw-color.component';
 import { AllUsersComponent } from './all-users/all-users.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { Graphs2024Component } from './graphs-2024/graphs-2024.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -14,5 +15,6 @@ export const routes: Routes = [
     {path: 'draw-user/:id', component: DrawComponent},
     {path: 'draw-color/:id', component: DrawColorComponent},
     {path: 'users/:id', component: AllUsersComponent},
+    {path: 'graphs/2024', component: Graphs2024Component},
     {path: '**', component: NotFoundComponent}
 ];
