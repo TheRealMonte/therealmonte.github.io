@@ -1,7 +1,7 @@
 # Canvas Stats
 Hello!
 
-I have created an app that lets you view data from the [Canvas event](https://canvas.fediverse.events/). The data was taken from the sql file [Grant](https://toast.ooo/u/grant) provided. An fixed versql file wth duplicate users merged and user rankings included can be [found here](https://raw.githubusercontent.com/TheRealMonte/sql-2024/main/canvas-2024-fixed-sql.sql) (33,567 KB).
+I have created an app that lets you view data from the [Canvas event](https://canvas.fediverse.events/). The data was taken from the sql file [Grant](https://toast.ooo/u/grant) provided. An fixed versql file wth duplicate users merged and user rankings included can be [found here](https://raw.githubusercontent.com/TheRealMonte/data-files/main/2024/canvas-2024-fixed-sql.sql) (33,567 KB).
 
 ### Canvas Stats Features
 * View the final stats for both the 2023 and 2024 events, such as the number of pixels placed of each color or number of instance's users that participated in the events.
