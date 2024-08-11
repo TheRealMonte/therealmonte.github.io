@@ -46,3 +46,20 @@
     display: block;
     margin: 10px auto;
 }
+
+#coming-soon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#coming-soon img {
+    height: 70px;
+}
+
+#coming-soon h1 {
+    font-size: 100px;
+    margin: 0 10px;
+    font-family: "Pixelify Sans", sans-serif;
+    color: var(--body-color);
+}

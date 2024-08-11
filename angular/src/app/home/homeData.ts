@@ -38,6 +38,14 @@ export class Image {
     ) {}
 }
 
+const canvas2025: Overview = new Overview(
+    2025,
+    new Image('', ''),
+    [],
+    [],
+    []
+)
+
 const canvas2024: Overview = new Overview(
     2024,
     new Image('https://raw.githubusercontent.com/TheRealMonte/images/main/2024/final2024.png', 'Final Canvas 2024'),
@@ -135,4 +143,4 @@ const canvas2023: Overview = new Overview(
     []
 );
 
-export const overviewData: Overview[] = [canvas2024, canvas2023]
+export const overviewData: Overview[] = [canvas2024, canvas2023, canvas2025]

@@ -1,5 +1,10 @@
-<app-navbar [year]="showYear" />
-
+@if (showYear === 2025) {
+    <app-navbar [year]="showYear" [showSearch]="false" />
+}
+@if (showYear !== 2025) {
+    <app-navbar [year]="showYear" [showSearch]="true"/>
+}
+@if (showYear !== 2025) {
 <main>
     <h2>Welcome to the {{showYear}} Canvas Stats page!</h2>
     <p>To see how you did during the event, enter your full username in the search bar above in the format
@@ -32,7 +37,16 @@
     </section>
     <img [src]="yearOverview.finalCanvas.imageURL" [alt]="yearOverview.finalCanvas.imageAlt" class="full" />
 </main>
-
+}
+@if (showYear === 2025) {
+    <main>
+        <div id="coming-soon">
+            <h1>Canvas</h1>
+            <img src="https://raw.githubusercontent.com/TheRealMonte/images/main/2025/logo2025.png" alt="2025" />
+        </div>
+        <p>A date for canvas 2025 has not yet been set.</p>
+    </main>
+}
 
 
 <app-footer />
