@@ -12,11 +12,16 @@ import { FooterComponent } from "../footer/footer.component";
 })
 export class DrawColorComponent implements OnInit {
   colorName: string = "";
+  year: number = 0;
   colorUrl: string = "";
   imgSRC: string = "";
 
   ngOnInit(): void {
-    let paramColor = this.route.snapshot.paramMap.get('id');
+    let paramColor = this.route.snapshot.paramMap.get('name');
+    let paramYear = this.route.snapshot.paramMap.get('year');
+    if (paramYear != null) {
+      this.year = +paramYear;
+    }
     if (paramColor != null) {
       let colorParts: string[] = paramColor.split("-");
       if (colorParts.length>1) {
@@ -29,7 +34,7 @@ export class DrawColorComponent implements OnInit {
         this.colorUrl = paramColor;
       }
     }
-    this.imgSRC = `https://raw.githubusercontent.com/TheRealMonte/images/main/colors-2024/${this.colorUrl}.png`;
+    this.imgSRC = `https://raw.githubusercontent.com/TheRealMonte/images/main/${this.year}/color-images/${this.colorUrl}.png`;
   }
 
   constructor(

@@ -1,119 +1,36 @@
 <app-navbar [year]="showYear" />
 
 <main>
-    <section id="space-between-wrapper">
-        <h2>Welcome to the {{showYear}} Canvas Stats page!</h2>
-        <button (click)="changeYear()" class="btn orange">Switch to {{showYear == 2023 ? "2024": "2023"}} Stats</button>
-    </section>
+    <h2>Welcome to the {{showYear}} Canvas Stats page!</h2>
     <p>To see how you did during the event, enter your full username in the search bar above in the format
         username&#64;instance. It is case-sensitive and matches how your username is display on your profile.</p>
-    @if (showYear === 2024) {
-    <p>1912 users from 305 instances participated in the event in 2024.</p>
-    <p>There were 642643 pixels placed on the canvas. Of those pixels, 409046 are the final pixels on the canvas, making
-        the canvas 81.8092% covered at the end of the event. Here are the counts for each color pixel placed, click on
-        the color to view all of the pixels of that color:</p>
-    <div class="colors-wrapper">
-        <span class="white count color-link" (click)="showColorIMG('white')">White: 55152</span>
-        <span class="count color-link lightGrey" (click)="showColorIMG('light-grey')">Light Grey: 20011</span>
-        <span class="count color-link mediumGrey" (click)="showColorIMG('medium-grey')">Medium Grey: 13057</span>
-        <span class="count color-link deepGrey" (click)="showColorIMG('deep-grey')">Deep Grey: 12730</span>
-        <span class="count color-link darkGrey" (click)="showColorIMG('dark-grey')">Dark Grey: 12810</span>
-        <span class="count color-link black" (click)="showColorIMG('black')">Black: 119773</span>
-        <span class="count color-link darkChocolate" (click)="showColorIMG('dark-chocolate')">Dark Chocolate: 5388</span>
-        <span class="count color-link chocolate" (click)="showColorIMG('chocolate')">Chocolate: 8724</span>
-        <span class="count color-link brown" (click)="showColorIMG('brown')">Brown: 6996</span>
-        <span class="count color-link peach" (click)="showColorIMG('peach')">Peach: 4138</span>
-        <span class="count color-link beige" (click)="showColorIMG('beige')">Beige: 8040</span>
-        <span class="count color-link pink" (click)="showColorIMG('pink')">Pink: 23204</span>
-        <span class="count color-link magenta" (click)="showColorIMG('magenta')">Magenta: 8536</span>
-        <span class="count color-link mauve" (click)="showColorIMG('mauve')">Mauve: 6421</span>
-        <span class="count color-link purple" (click)="showColorIMG('purple')">Purple: 12185</span>
-        <span class="count color-link darkPurple" (click)="showColorIMG('dark-purple')">Dark Purple: 10896</span>
-        <span class="count color-link navy" (click)="showColorIMG('navy')">Navy: 27663</span>
-        <span class="count color-link blue" (click)="showColorIMG('blue')">Blue: 34210</span>
-        <span class="count color-link azure" (click)="showColorIMG('azure')">Azure: 32045</span>
-        <span class="count color-link aqua" (click)="showColorIMG('aqua')">Aqua: 28753</span>
-        <span class="count color-link lightTeal" (click)="showColorIMG('light-teal')">Light Teal: 5153</span>
-        <span class="count color-link darkTeal" (click)="showColorIMG('dark-teal')">Dark Teal: 5216</span>
-        <span class="count color-link forest" (click)="showColorIMG('forest')">Forest: 5975</span>
-        <span class="count color-link darkGreen" (click)="showColorIMG('dark-green')">Dark Green: 12810</span>
-        <span class="count color-link green" (click)="showColorIMG('green')">Green: 15535</span>
-        <span class="count color-link lime" (click)="showColorIMG('lime')">Lime: 4168</span>
-        <span class="count color-link pastelYellow" (click)="showColorIMG('pastel-yellow')">Pastel Yellow: 12417</span>
-        <span class="count color-link yellow" (click)="showColorIMG('yellow')">Yellow: 35911</span>
-        <span class="count color-link orange" (click)="showColorIMG('orange')">Orange: 12336</span>
-        <span class="count color-link rust" (click)="showColorIMG('rust')">Rust: 7950</span>
-        <span class="count color-link maroon" (click)="showColorIMG('maroon')">Maroon: 4887</span>
-        <span class="count color-link rose" (click)="showColorIMG('rose')">Rose: 8750</span>
-        <span class="count color-link red" (click)="showColorIMG('red')">Red: 54053</span>
-        <span class="count color-link watermelon" (click)="showColorIMG('watermelon')">Watermelon: 3711</span>
-    </div>
-    <p>The coordinate with the most pixels placed on was (10,262) with 1427 placed. The users who placed pixels on
-        (10,262) are:</p>
-    <ul>
-        <li>142446&#64;toast.ooo: 1414 times</li>
-        <li>Kelo&#64;lemmy.world: 7 times</li>
-        <li>hemko&#64;lemmy.dbzer0.com: 2 times</li>
-        <li>ategon&#64;programming.dev: 1 time</li>
-        <li>grant&#64;grants.cafe: 1 time</li>
-        <li>EXtremeExploit&#64;lemmy.world: 1 time</li>
-        <li>hdggDalton&#64;toast.ooo: 1 time</li>
-    </ul>
-    <p>1101 users deleted a total of 15724 pixels. 13 users deleted all of their pixels.</p>
+    @for (tag of yearOverview.tags; track tag) {
+        @if (tag.type === 'p') {
+            @for (paragraph of tag.content; track paragraph) {
+                <p>{{paragraph}}</p>
+            }
+        }
+        @if (tag.type === 'ul') {
+            <ul>
+                @for (username of tag.content; track username) {
+                    <li>{{username}}</li>
+                }
+            </ul>
+        }
+        @if (tag.type == 'colorCounts') {
+            <div class="colors-wrapper">
+            @for (color of yearOverview.colorCounts; track color) {
+                <span [className]="color.colorVariable" (click)="showColorIMG(color.colorVariable)">{{color.colorName}}: {{color.count}}</span>
+            }
+            </div>
+        }
+    }
     <section class="btn-wrapper">
-        <button (click)="view2024Graphs()" class="btn azure">View the 2024 Graphs</button>
+        @for (link of yearOverview.links; track link) {
+            <button [className]="link.classes" (click)="navigateTo(link.onClick)">{{link.linkText}}</button>
+        }
     </section>
-    }
-    @if (showYear === 2023) {
-    <p>2208 users from 132 instances participated in the event in 2023.</p>
-    <p>There were 628416 pixels placed on the canvas. Here are the counts for each color pixel placed:</p>
-    <div class="colors-wrapper">
-        <span class="white count">White: 22488</span>
-        <span class="count lightGrey">Light Grey: 20308</span>
-        <span class="count mediumGrey">Medium Grey: 15799</span>
-        <span class="count deepGrey">Deep Grey: 13864</span>
-        <span class="count darkGrey">Dark Grey: 19708</span>
-        <span class="count black">Black: 123666</span>
-        <span class="count chocolate">Chocolate: 9669</span>
-        <span class="count brown">Brown: 8535</span>
-        <span class="count peach">Peach: 5790</span>
-        <span class="count beige">Beige: 4821</span>
-        <span class="count pink">Pink: 18566</span>
-        <span class="count magenta">Magenta: 4554</span>
-        <span class="count mauve">Mauve: 10180</span>
-        <span class="count purple">Purple: 17346</span>
-        <span class="count navy">Navy: 17594</span>
-        <span class="count blue">Blue: 58856</span>
-        <span class="count azure">Azure: 33653</span>
-        <span class="count aqua">Aqua: 12588</span>
-        <span class="count lightTeal">Light Teal: 5695</span>
-        <span class="count darkTeal">Dark Teal: 4701</span>
-        <span class="count forest">Forest: 9478</span>
-        <span class="count darkGreen">Dark Green: 19377</span>
-        <span class="count green">Green: 12612</span>
-        <span class="count lime">Lime: 5585</span>
-        <span class="count pastelYellow">Pastel Yellow: 8543</span>
-        <span class="count yellow">Yellow: 32473</span>
-        <span class="count orange">Orange: 14841</span>
-        <span class="count rust">Rust: 19064</span>
-        <span class="count maroon">Maroon: 4218</span>
-        <span class="count rose">Rose: 10948</span>
-        <span class="count red">Red: 55683</span>
-        <span class="count watermelon">Watermelon: 7213</span>
-    </div>
-    <p>The coordinate with the most pixels placed on was (175, 171) with 170 placed. The users who placed pixels on
-        (175, 171) are:</p>
-    <ul>
-        <li>Depress_mode&#64;lemmy.world: 83 times</li>
-        <li>Kalcifer&#64;lemmy.world: 77 times</li>
-        <li>anonymous1691293996&#64;lemmy.world: 4 times</li>
-        <li>anonymous1691294527&#64;lemmy.world: 3 times</li>
-        <li>anonymous1691296202&#64;lemmy.world: 1 time</li>
-        <li>bstix&#64;feddit.dk: 1 time</li>
-        <li>Wilker&#64;lemmy.blahaj.zone: 1 time</li>
-    </ul>
-    <p>1000 users deleted a total of 10715 pixels.</p>
-    }
+    <img [src]="yearOverview.finalCanvas.imageURL" [alt]="yearOverview.finalCanvas.imageAlt" class="full" />
 </main>
 
 

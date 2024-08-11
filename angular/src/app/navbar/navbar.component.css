@@ -2,6 +2,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 header h1 {
     font-size: 70px;
@@ -80,6 +81,14 @@ select {
     color: var(--body-color);
 }
 
+.active {
+    font-weight: 900;
+}
+
+.logo-year {
+    height: 40px;
+}
+
 @media only screen and (max-width: 610px) {
     header h1 {
         font-size: 40px;
@@ -95,6 +104,7 @@ select {
     nav {
         flex-direction: column;
         align-items: center;
+        border-radius: 5px;
     }
     .search-wrapper {
         flex-wrap: wrap;

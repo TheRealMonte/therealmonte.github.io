@@ -69,7 +69,7 @@ export class Stats2024Component implements OnInit {
   }
 
   sendUserTo2023Stats() {
-    this.router.navigateByUrl(`/2023/${this.username}`);
+    this.router.navigateByUrl(`/2023/user/${this.username}`);
   }
 
   sendUserToDraw() {

@@ -17,7 +17,7 @@ export class AllUsersComponent implements OnInit {
   users: { username: string, userRank: number }[] = [];
   loading: boolean = true
   ngOnInit(): void {
-    let paramYear = this.route.snapshot.paramMap.get('id');
+    let paramYear = this.route.snapshot.paramMap.get('year');
     if (paramYear != null) {
       this.year = +paramYear;
     }
@@ -44,11 +44,6 @@ export class AllUsersComponent implements OnInit {
   ) { }
 
   goToUser(username: string) {
-    if (this.year === 2024) {
-      this.router.navigateByUrl(`/2024/${username}`);
-    }
-    if (this.year === 2023) {
-      this.router.navigateByUrl(`/2023/${username}`);
-    }
+    this.router.navigateByUrl(`/${this.year}/user/${username}`);
   }
 }

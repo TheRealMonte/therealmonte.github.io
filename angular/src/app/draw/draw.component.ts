@@ -27,7 +27,7 @@ export class DrawComponent implements AfterViewInit {
   ) {}
 
   ngAfterViewInit() {
-    let paramUsername = this.route.snapshot.paramMap.get('id');
+    let paramUsername = this.route.snapshot.paramMap.get('username');
     if (paramUsername != null) {
       this.username = paramUsername;
     }

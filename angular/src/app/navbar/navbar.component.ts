@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
@@ -5,7 +6,7 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [FormsModule, RouterLink, RouterOutlet],
+  imports: [FormsModule, RouterLink, RouterOutlet, CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
@@ -21,11 +22,7 @@ export class NavbarComponent {
   onSubmit() {
     if (this.searchString != this.username) {
       this.username = this.searchString;
-      if (this.year === 2024) {
-        this.router.navigateByUrl(`/2024/${this.username}`);
-      } else {
-        this.router.navigateByUrl(`/2023/${this.username}`);
-      }
+      this.router.navigateByUrl(`/${this.year}/user/${this.username}`);
       
     setTimeout(() => {
       window.location.reload();
@@ -34,6 +31,10 @@ export class NavbarComponent {
   }
 
   seeAllUser() {
-    this.router.navigateByUrl(`/users/${this.year}`);
+    this.router.navigateByUrl(`/${this.year}/users`);
+  }
+
+  getLogoYear() {
+    return `https://raw.githubusercontent.com/TheRealMonte/images/main/${this.year}/logo${this.year}.png`
   }
 }

@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NavbarComponent } from "../navbar/navbar.component";
 import { FooterComponent } from "../footer/footer.component";
 import { LoadingComponent } from "../loading/loading.component";
+import { overviewData, Overview, ColorCount, Link, Tag } from './homeData';
 
 @Component({
   selector: 'app-home',
@@ -12,30 +13,44 @@ import { LoadingComponent } from "../loading/loading.component";
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   showYear: number = 2024;
-  username: string = "";
+  yearOverview!: Overview;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
   ) {}
-
-  changeYear() {
-    if (this.showYear === 2023) {
-      this.showYear = 2024;
+  ngOnInit(): void {
+    let paramYear = this.route.snapshot.paramMap.get('year');
+    if (paramYear != null) {
+      this.showYear = +paramYear;
+      let findOverview = overviewData.find(overview => {
+        return overview.year === this.showYear;
+      });
+      if (findOverview) {
+        this.yearOverview = findOverview;
+      } else {
+        this.router.navigateByUrl('/2024');
+      }
     } else {
-      this.showYear = 2023;
+      this.showYear = 2024;
+      this.yearOverview = overviewData[0];
     }
   }
 
+  navigateTo(link: string) {
+    this.router.navigateByUrl(link);
+  }
+
   showColorIMG(color: string) {
-    this.router.navigateByUrl(`/draw-color/${color}`);
+    this.router.navigateByUrl(`/draw-color/${this.showYear}/${color}`);
   }
 
   seeAllUser() {
-    this.router.navigateByUrl(`/users/${this.showYear}`);
+    this.router.navigateByUrl(`${this.showYear}/users`);
   }
   view2024Graphs() {
-    this.router.navigateByUrl('/graphs/2024');
+    this.router.navigateByUrl(`${this.showYear}/graphs`);
   }
 }

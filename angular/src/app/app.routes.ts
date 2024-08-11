@@ -10,11 +10,12 @@ import { Graphs2024Component } from './graphs-2024/graphs-2024.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
-    {path: '2024/:id', component: Stats2024Component},
-    {path: '2023/:id', component: Stats2023Component},
-    {path: 'draw-user/:id', component: DrawComponent},
-    {path: 'draw-color/:id', component: DrawColorComponent},
-    {path: 'users/:id', component: AllUsersComponent},
-    {path: 'graphs/2024', component: Graphs2024Component},
+    {path: ':year', component: HomeComponent},
+    {path: '2024/user/:id', component: Stats2024Component},
+    {path: '2023/user/:id', component: Stats2023Component},
+    {path: 'draw-user/:username', component: DrawComponent},
+    {path: 'draw-color/:year/:name', component: DrawColorComponent},
+    {path: ':year/users', component: AllUsersComponent},
+    {path: ':year/graphs', component: Graphs2024Component},
     {path: '**', component: NotFoundComponent}
 ];

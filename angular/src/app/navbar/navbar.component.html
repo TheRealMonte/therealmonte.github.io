@@ -5,12 +5,17 @@
             <div class="logo-square front"></div>
         </div>
     </a>
-    <a href="/" class="logo-link"><h1>Canvas Stats</h1></a>
-        
+    <a href="/2024" class="logo-link"><h1>Canvas Stats</h1></a>
+    <img [src]="getLogoYear()" [alt]="year" class="logo-year" />
     
 </header>
 <nav>
-    <a href="/">Home</a>
+    <span>
+        <!--<a href="/2025" [ngClass]="year === 2025? 'active' : ''">2025</a> | -->
+        <a href="/2024" [ngClass]="year === 2024? 'active' : ''">2024</a> | 
+        <a href="/2023" [ngClass]="year === 2023? 'active' : ''">2023</a>
+    </span>
+    
     <a href="https://fediverse.events/">fediverse.events</a>
     <a href="https://matrix.to/#/#lemmy-canvas:matrix.org">Matrix Space</a>
     <a href="https://discord.gg/mEUqXZw8kR">Discord Server <span class="large-screens-only">(bridged to matrix)</span></a>
