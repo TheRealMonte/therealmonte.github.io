@@ -15,10 +15,12 @@ import { LoadingComponent } from "../loading/loading.component";
 export class DrawComponent implements AfterViewInit {
   @ViewChild('pixelCanvas', { static: false }) canvas!: ElementRef<HTMLCanvasElement>;
   private context!: CanvasRenderingContext2D;
-  private isDrawing: boolean = false;
   pixels: any[] = []
   finishedDrawing = false;
   username: string = "";
+  year: number = 0;
+  canvasHeight: number = 0;
+  canvasWidth: number = 0
 
   constructor(
     private canvasService: CanvasService,
@@ -27,6 +29,17 @@ export class DrawComponent implements AfterViewInit {
   ) {}
 
   ngAfterViewInit() {
+    let paramYear = this.route.snapshot.paramMap.get('year');
+    if (paramYear != null) {
+      this.year = this.canvasService.checkIfYearHasStats(+paramYear);
+      if (this.year === 2023) {
+        this.canvasHeight = 1000;
+        this.canvasWidth = 1000;
+      } else if (this.year === 2024) {
+        this.canvasHeight = 500;
+        this.canvasWidth = 1000;
+      }
+    }
     let paramUsername = this.route.snapshot.paramMap.get('username');
     if (paramUsername != null) {
       this.username = paramUsername;
@@ -35,10 +48,10 @@ export class DrawComponent implements AfterViewInit {
     if (contElm != null) {
       this.context = contElm;
     }
-    this.canvasService.getPixelData().subscribe(data => {
+    this.canvasService.getPixelData(this.year).subscribe(data => {
       const list = data.split('\n');
       this.context.fillStyle = "#ffffff";
-    this.context.fillRect(0, 0, 1000, 500);
+      this.context.fillRect(0, 0, this.canvasWidth, this.canvasHeight);
       list.forEach(e => {
         let cols = e.split(",");
         if (cols[0] == paramUsername) {
@@ -65,7 +78,6 @@ export class DrawComponent implements AfterViewInit {
 
   drawPixels(row: string) {
     let cols = row.split(',');
-    let username = cols[0]
     let xCord = +cols[1];
     let yCord = +cols[2];
     let color = cols[3];
@@ -73,8 +85,8 @@ export class DrawComponent implements AfterViewInit {
     this.context.fillRect(xCord, yCord, 1, 1);
   }
 
-  sendUserTo2024Stats() {
-    this.router.navigateByUrl(`/2024/${this.username}`);
+  sendUserToStats() {
+    this.router.navigateByUrl(`/${this.year}/user/${this.username}`);
   }
     
 }

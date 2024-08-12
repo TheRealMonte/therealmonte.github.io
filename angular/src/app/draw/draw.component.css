@@ -1,7 +1,5 @@
 #myCanvas {
     display: block;
-    width: 1000px;
-    height: 500px;
     background-color: white;
     border: 1px solid black;
     margin: 5px auto;

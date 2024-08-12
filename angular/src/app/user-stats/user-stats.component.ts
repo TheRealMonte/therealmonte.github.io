@@ -5,18 +5,20 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { CanvasService } from '../canvas.service';
 import { User, UserColors2024 } from '../models';
 import { LoadingComponent } from "../loading/loading.component";
+import { CommonModule } from '@angular/common';
 
 class YearStats {
   constructor(
       public year: number,
-      public numberOfusers: number
+      public numberOfusers: number,
+      public otherYear: number[]
   ) {}
 }
 
 @Component({
   selector: 'app-user-stats',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, LoadingComponent],
+  imports: [NavbarComponent, FooterComponent, LoadingComponent, CommonModule],
   templateUrl: './user-stats.component.html',
   styleUrl: '../home/home.component.css'
 })
@@ -29,8 +31,9 @@ export class UserStatsComponent implements OnInit {
   userColors!: UserColors2024;
   wasUserFound: boolean = true;
   loading: boolean = true;
-  years = [new YearStats(2024, 1914), new YearStats(2023, 2208)];
+  years = [new YearStats(2024, 1914, [2023]), new YearStats(2023, 2208, [2024])];
   yearStat!: YearStats;
+  buttonColors: string[] = ['btn magenta', 'btn azure', 'btn rust', 'btn red'];
 
   constructor(
     private canvasService: CanvasService,
@@ -110,7 +113,7 @@ export class UserStatsComponent implements OnInit {
   }
 
   sendUserToDraw() {
-    this.router.navigateByUrl(`/draw-user/${this.username}`);
+    this.router.navigateByUrl(`/${this.year}/draw-user/${this.username}`);
   }
 
 }

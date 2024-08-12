@@ -54,14 +54,9 @@
             <span class="count watermelon">Watermelon: {{userColors.watermelon}}</span>
         </div>
         <section class="btn-wrapper">
-            @if (year === 2024) {
-                <button (click)="sendUserToDraw()" class="btn dark-green">Your pixels placed in 2024</button>
-            }
-            @if (year !== 2023) {
-                <button (click)="sendUserToAnotherStatsYear(2023)" class="btn magenta">Your 2023 Stats</button>
-            }
-            @if (year !== 2024) {
-                <button (click)="sendUserToAnotherStatsYear(2024)" class="btn magenta">Your 2024 Stats</button>
+                <button (click)="sendUserToDraw()" class="btn dark-green">Your pixels placed in {{year}}</button>
+            @for (yearLink of yearStat.otherYear; track yearLink;let index = $index) {
+                <button (click)="sendUserToAnotherStatsYear(yearLink)" [ngClass]="buttonColors[index]">Your {{yearLink}} Stats</button>
             }
         </section>
     </main>

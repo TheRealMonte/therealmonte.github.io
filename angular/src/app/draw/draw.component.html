@@ -1,18 +1,18 @@
-<app-navbar [year]="2024" [username]="username" />
+<app-navbar [year]="year" [username]="username" [showSearch]="true" />
 @if(!finishedDrawing) {
 <app-loading />
 }
 <div id="main-canvas">
     <section id="space-between-wrapper">
-        <button class="btn blue" (click)="sendUserTo2024Stats()"><span class="material-symbols-outlined">
+        <button class="btn blue" (click)="sendUserToStats()"><span class="material-symbols-outlined">
             arrow_back
-        </span> Back to {{username}} Stats</button>
+        </span> Back to {{username}} {{year}} Stats</button>
     <button (click)="downloadImage()" class="btn mauve">Download your pixels as a PNG</button>
     </section>
-    <p>The image below is all of the pixels you placed during the 2024 event. <span class="responsive-warning">The image
+    <p>The image below is all of the pixels you placed during the {{year}} event. <span class="responsive-warning">The image
             might look weird because your browser window is too narrow to display your image in its full width. The
             downloaded image will look normal.</span></p>
-    <canvas id="myCanvas" #pixelCanvas width="1000" height="500">Your browser does not support the HTML canvas
+    <canvas id="myCanvas" #pixelCanvas [width]="canvasWidth" [height]="canvasHeight">Your browser does not support the HTML canvas
         tag.</canvas>
     <hr />
     <p>If you would like an image created such as the top 100 users, the canvas in reversed order, all pixels from an

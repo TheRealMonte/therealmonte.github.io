@@ -16,8 +16,8 @@ export class CanvasService {
         }
     }
 
-    getPixelData() {
-        return this.http.get('https://raw.githubusercontent.com/TheRealMonte/data-files/main/2024/pixels.csv', {responseType: 'text'});
+    getPixelData(year: number) {
+        return this.http.get(`https://raw.githubusercontent.com/TheRealMonte/data-files/main/${year}/pixels.csv`, {responseType: 'text'});
     }
 
     getUsers(year: number) {
