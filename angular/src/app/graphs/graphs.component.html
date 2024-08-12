@@ -1,0 +1,10 @@
+<app-navbar [year]="year" [showSearch]="true" />
+<main>
+    <h3>Pixels placed per minute in {{year}}</h3>
+    <img [src]="pixelsPlacedImageURL" id="pixels-per-minute" />
+    <h3>Pie chart of the colors placed in {{year}}</h3>
+    <img [src]="piechartImageURL" id="pie-chart" />
+    <h3>Heat map by order of pixels placed at each coordinate in {{year}}</h3>
+    <img [src]="heatmapImageURL" id="heat-map" />
+</main>
+<app-footer />

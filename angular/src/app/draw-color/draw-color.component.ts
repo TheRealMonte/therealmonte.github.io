@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavbarComponent } from "../navbar/navbar.component";
 import { FooterComponent } from "../footer/footer.component";
+import { CanvasService } from '../canvas.service';
 
 @Component({
   selector: 'app-draw-color',
@@ -20,7 +21,7 @@ export class DrawColorComponent implements OnInit {
     let paramColor = this.route.snapshot.paramMap.get('name');
     let paramYear = this.route.snapshot.paramMap.get('year');
     if (paramYear != null) {
-      this.year = +paramYear;
+      this.year = this.canvasService.checkIfYearHasStats(+paramYear);
     }
     if (paramColor != null) {
       let colorParts: string[] = paramColor.split("-");
@@ -38,7 +39,8 @@ export class DrawColorComponent implements OnInit {
   }
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private canvasService: CanvasService
   ) {}
 
 }

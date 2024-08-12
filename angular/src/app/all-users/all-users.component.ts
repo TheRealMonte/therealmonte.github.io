@@ -19,7 +19,7 @@ export class AllUsersComponent implements OnInit {
   ngOnInit(): void {
     let paramYear = this.route.snapshot.paramMap.get('year');
     if (paramYear != null) {
-      this.year = +paramYear;
+      this.year = this.canvasService.checkIfYearHasStats(+paramYear);
     }
     this.canvasService.getUsers(this.year).subscribe(data => {
       const list = data.split('\n');

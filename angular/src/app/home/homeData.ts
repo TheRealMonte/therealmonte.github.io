@@ -140,7 +140,7 @@ const canvas2023: Overview = new Overview(
         new ColorCount('red', 'Red', 55683), 
         new ColorCount('watermelon', 'Watermelon', 7213)
     ],
-    []
+    [new Link('View the 2023 Graphs', '/2023/graphs', 'btn azure')]
 );
 
 export const overviewData: Overview[] = [canvas2024, canvas2023, canvas2025]

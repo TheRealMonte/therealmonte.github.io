@@ -7,6 +7,15 @@ export class CanvasService {
         private http: HttpClient
     ) { }
 
+    checkIfYearHasStats(year: number) {
+        const years: number[] = [2024, 2023]
+        if (years.includes(year)) {
+            return year;
+        } else {
+            return years[0];
+        }
+    }
+
     getPixelData() {
         return this.http.get('https://raw.githubusercontent.com/TheRealMonte/data-files/main/2024/pixels.csv', {responseType: 'text'});
     }
