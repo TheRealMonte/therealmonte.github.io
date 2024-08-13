@@ -37,4 +37,7 @@ export class NavbarComponent {
   getLogoYear() {
     return `https://raw.githubusercontent.com/TheRealMonte/images/main/${this.year}/logo${this.year}.png`
   }
+  goToYearHomepage() {
+    this.router.navigateByUrl(`/${this.year}`);
+  }
 }

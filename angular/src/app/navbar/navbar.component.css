@@ -9,6 +9,7 @@ header h1 {
     margin: 0 10px;
     font-family: "Pixelify Sans", sans-serif;
     color: var(--body-color);
+    cursor: pointer;
 }
 
 .logo-link {
@@ -21,6 +22,7 @@ header h1 {
     display: block;
     width: 70px;
     height: 70px;
+    cursor: pointer;
 }
 .logo-square {
     display: block;
@@ -87,6 +89,7 @@ select {
 
 .logo-year {
     height: 40px;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 610px) {

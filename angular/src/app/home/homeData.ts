@@ -27,7 +27,8 @@ export class Link {
     constructor(
         public linkText: string,
         public onClick: string,
-        public classes: string
+        public classes: string,
+        public external: boolean
     ) { }
 }
 
@@ -92,7 +93,10 @@ const canvas2024: Overview = new Overview(
         new ColorCount('red', 'Red', 54053),
         new ColorCount('watermelon', 'Watermelon', 3711)
     ],
-    [new Link('View the 2024 Graphs', '/2024/graphs', 'btn azure')]
+    [
+        new Link('View the 2024 Graphs', '/2024/graphs', 'btn azure', false),
+        new Link('View the 2024 Atlas', 'https://atlas.mariusdavid.fr', 'btn dark-purple', true)
+    ]
 
 );
 
@@ -140,7 +144,7 @@ const canvas2023: Overview = new Overview(
         new ColorCount('red', 'Red', 55683), 
         new ColorCount('watermelon', 'Watermelon', 7213)
     ],
-    [new Link('View the 2023 Graphs', '/2023/graphs', 'btn azure')]
+    [new Link('View the 2023 Graphs', '/2023/graphs', 'btn azure', false)]
 );
 
 export const overviewData: Overview[] = [canvas2024, canvas2023, canvas2025]

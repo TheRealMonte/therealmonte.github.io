@@ -32,7 +32,12 @@
     }
     <section class="btn-wrapper">
         @for (link of yearOverview.links; track link) {
-            <button [className]="link.classes" (click)="navigateTo(link.onClick)">{{link.linkText}}</button>
+            @if (link.external) {
+                <a [href]="link.onClick" [className]="link.classes" target="_blank">{{link.linkText}}</a>
+            }
+            @if (!link.external) {
+                <a [className]="link.classes" [routerLink]="link.onClick">{{link.linkText}}</a>
+            }
         }
     </section>
     <img [src]="yearOverview.finalCanvas.imageURL" [alt]="yearOverview.finalCanvas.imageAlt" class="full" />
